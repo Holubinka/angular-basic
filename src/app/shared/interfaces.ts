@@ -12,7 +12,7 @@ export interface Comments {
   body: string;
 }
 
-export interface Users {
+export interface Author {
   id: number;
   name: string;
   username: string;

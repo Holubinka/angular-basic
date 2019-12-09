@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 import {Post} from './interfaces';
 import {environment} from '../../environments/environment';
 import {delay, map} from 'rxjs/operators';
@@ -24,7 +24,7 @@ export class PostsService {
   }
 
   getAll(): Observable<Post[]> {
-    return this.http.get<Post[]>(`${environment.fbDbUrl}/posts?_limit=3`)
+    return this.http.get<Post[]>(`${environment.fbDbUrl}/posts`)
       .pipe(delay(500));
   }
 

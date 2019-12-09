@@ -22,9 +22,17 @@
     <quill-editor formControlName="text"></quill-editor>
   </div>
 
-  <button
-    type="submit"
-    class="btn btn-block btn-dark"
-    [disabled]="form.invalid"
-  >Создать пост</button>
+  <div>
+    <button
+      type="submit"
+      class="btn  btn-dark"
+      [disabled]="form.invalid"
+    >Створити пост</button>
+
+    <button
+      class="btn  btn-dark"
+      [routerLink]="['/home']"
+    >Відміна</button>
+  </div>
+
 </form>

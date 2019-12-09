@@ -1,4 +1,4 @@
-<div *ngIf="posts$ | async as post; else loading">
+<div  *ngIf="posts$ | async as post; else loading">
   <div class="post">
     <div class="header">
       <h4>{{post.title | titlecase}}</h4>
@@ -6,14 +6,21 @@
       <button routerLink="/" class="btn btn-link">На главную</button>
     </div>
 
-    <div class="info">
-      <strong>{{user.name}}</strong>
+    <div class="info" *ngIf="user | async as users">
+      <strong>Author: {{users.name}}</strong>
     </div>
 
-    <div>
-      <quill-view-html [content]="post.body"></quill-view-html>
+    <div >
+      <quill-view-html [content]="post.body | titlecase" ></quill-view-html>
+    </div>
+
+    <div *ngFor="let comment of comments">
+      <app-comments-page [comments]="comment"></app-comments-page>
     </div>
   </div>
+
+
+
 </div>
 
 <ng-template #loading>

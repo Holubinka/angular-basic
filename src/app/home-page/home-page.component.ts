@@ -1,7 +1,5 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PostsService} from '../shared/posts.service';
-import {Observable, Subscription} from 'rxjs';
-import {Post} from '../shared/interfaces';
 import {AlertService} from '../shared/services/alert.service';
 
 @Component({
@@ -27,8 +25,8 @@ export class HomePageComponent implements OnInit {
         this.postsService.posts = posts;
         this.postsService.active = false;
       }
-      console.log(this.postsService.posts);
     });
+
   }
 
   remove(id: number) {
@@ -37,6 +35,5 @@ export class HomePageComponent implements OnInit {
       this.alert.warning('Пост был удален');
     });
   }
-
 
 }

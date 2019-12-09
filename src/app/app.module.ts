@@ -18,6 +18,8 @@ import {CreatePageComponent} from './create-page/create-page.component';
 import {EditPageComponent} from './edit-page/edit-page.component';
 import {QuillModule} from 'ngx-quill';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { CommentsPageComponent } from './comments-page/comments-page.component';
+import { AuthorPageComponent } from './author-page/author-page.component';
 
 
 registerLocaleData(ukLocale, 'uk');
@@ -32,6 +34,8 @@ registerLocaleData(ukLocale, 'uk');
     SearchPipe,
     AlertComponent,
     CreatePageComponent,
+    CommentsPageComponent,
+    AuthorPageComponent,
   ],
   imports: [
     HttpClientModule,

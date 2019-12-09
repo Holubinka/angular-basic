@@ -1,4 +1,3 @@
-
 <div
   *ngIf="postsService.posts.length; else loading"
   class="posts"
@@ -10,28 +9,28 @@
     <thead>
     <tr>
       <th>#</th>
-      <th>Автор</th>
       <th>Название</th>
+      <th>Автор</th>
       <th>Действие</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let post of postsService.posts | searchPosts:searchStr | paginate: {itemsPerPage: count, currentPage: p}; let idx = index">
+    <tr *ngFor="let post of postsService.posts| searchPosts:searchStr | paginate: {itemsPerPage: count, currentPage: p}; let idx = index;">
       <td>{{ idx + 1 }}</td>
       <td><button
         class="btn btn-link open"
-        [routerLink]="['/','user', 1]"
+        [routerLink]="['/','post', post.id]"
       >
-        Автор
+        {{ post.title | titlecase }}
+      </button>
+      </td>
+      <td><button
+        class="btn btn-link open"
+        [routerLink]="['/','user', post.userId]"
+      >
+        Author {{post.userId}}
       </button></td>
-      <td>{{ post.title | titlecase }}</td>
       <td>
-        <button
-          class="btn btn-link open"
-          [routerLink]="['/','post', post.id]"
-        >
-          Открыть
-        </button>
         <a (click)="remove(post.id)">Удалить</a>
       </td>
     </tr>
