@@ -5,16 +5,22 @@ import {HomePageComponent} from './home-page/home-page.component';
 import {PostPageComponent} from './post-page/post-page.component';
 import {CreatePageComponent} from './create-page/create-page.component';
 import {AuthorPageComponent} from './author-page/author-page.component';
+import {ModalPageComponent} from './modal-page/modal-page.component';
+import {CommentsPageComponent} from './comments-page/comments-page.component';
 
 
 const routes: Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
       {path: '', redirectTo: '/home', pathMatch: 'full'},
-      {path: 'home', component: HomePageComponent},
+      {path: 'home', component: HomePageComponent, children: [
+          {path: 'modal', component: ModalPageComponent, children: [
+              {path: 'user/:id', component: AuthorPageComponent},
+              {path: 'comments/:id', component: CommentsPageComponent}
+            ]},
+        ]},
       {path: 'post/:id', component: PostPageComponent},
-      {path: 'create', component: CreatePageComponent},
-      {path: 'user/:id', component: AuthorPageComponent},
+      {path: 'create', component: CreatePageComponent}
     ]
   }
 ];

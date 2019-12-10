@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, ComponentFactoryResolver, OnInit, ViewChild} from '@angular/core';
 import {PostsService} from '../shared/posts.service';
 import {AlertService} from '../shared/services/alert.service';
 
@@ -36,4 +36,7 @@ export class HomePageComponent implements OnInit {
     });
   }
 
+  openScrollableContent(longContent: any) {
+
+  }
 }

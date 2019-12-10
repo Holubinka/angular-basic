@@ -1,28 +1,28 @@
-<div  *ngIf="posts$ | async as post; else loading">
-  <div class="post">
-    <div class="header">
-      <h4>{{post.title | titlecase}}</h4>
+<p *ngIf="error; else postsBlock" class="error">{{error}}</p>
 
-      <button routerLink="/" class="btn btn-link">На главную</button>
+<ng-template #postsBlock>
+  <div  *ngIf="posts$ | async as post; else loading">
+    <div class="post">
+      <div class="header">
+        <h4>{{post.title | titlecase}}</h4>
+
+        <button routerLink="/" class="btn btn-link">На главную</button>
+      </div>
+
+      <div class="info" *ngIf="user | async as users">
+        <strong>Author: {{users.name}}</strong>
+      </div>
+
+      <div >
+        <quill-view-html [content]="post.body | titlecase" ></quill-view-html>
+      </div>
+
+      <app-comments-page [commentsId]="post.id"></app-comments-page>
     </div>
 
-    <div class="info" *ngIf="user | async as users">
-      <strong>Author: {{users.name}}</strong>
-    </div>
-
-    <div >
-      <quill-view-html [content]="post.body | titlecase" ></quill-view-html>
-    </div>
-
-    <div *ngFor="let comment of comments">
-      <app-comments-page [comments]="comment"></app-comments-page>
-    </div>
   </div>
 
-
-
-</div>
-
-<ng-template #loading>
-  <p class="text-center">Загружаю пост...</p>
+  <ng-template #loading>
+    <p class="text-center">Загружаю пост...</p>
+  </ng-template>
 </ng-template>

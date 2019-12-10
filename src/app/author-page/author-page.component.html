@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="author; else loading">
   <p>Name: {{author.name}}</p>
   <p>Username: {{author.username}}</p>
   <p>Email: {{author.email}}</p>
@@ -12,3 +12,7 @@
   <p>Номер телефону: {{author.phone}}</p>
   <p>Вебсайт: {{author.website}}</p>
 </div>
+
+<ng-template #loading>
+  <p class="text-center">Загружаю дані....</p>
+</ng-template>

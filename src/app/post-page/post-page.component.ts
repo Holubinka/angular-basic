@@ -16,13 +16,12 @@ export class PostPageComponent implements OnInit {
 
   posts$: Observable<Post>;
   user: Observable<Author>;
-  comments: Comments[] = [];
+  error = '';
 
   constructor(
     private route: ActivatedRoute,
     private postsService: PostsService,
     private usersService: UsersService,
-    private commentsService: CommentsService
   ) { }
 
   ngOnInit() {
@@ -32,11 +31,11 @@ export class PostPageComponent implements OnInit {
       })).subscribe(data => {
         this.posts$ = of(data);
         this.user =  this.usersService.getById(data.id);
-        console.log('id', data.id);
-        this.commentsService.getById(data.id).subscribe( data => {
-          this.comments = data;
-        });
-      });
+      }, error => {
+        if (error.status === 404) {
+          this.error = error.message;
+        }
+    });
   }
 
 }

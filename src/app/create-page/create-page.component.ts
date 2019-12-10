@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Post} from '../shared/interfaces';
 import {PostsService} from '../shared/posts.service';
@@ -12,6 +12,7 @@ import {AlertService} from '../shared/services/alert.service';
 export class CreatePageComponent implements OnInit {
 
   form: FormGroup;
+  submitButton = false;
 
   constructor(
     private postsService: PostsService,
@@ -38,10 +39,12 @@ export class CreatePageComponent implements OnInit {
       body: this.form.value.text
     };
 
+    this.submitButton = true;
     this.postsService.create(post).subscribe( post1 => {
       this.postsService.posts.unshift(post1);
       this.form.reset();
       this.alert.success('Пост был создан');
+      this.submitButton = false;
     });
   }
 

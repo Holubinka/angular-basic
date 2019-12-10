@@ -1,7 +1,9 @@
-<div class="card" *ngIf="comments; else loading">
-  <p>Name: {{comments.name | titlecase}}</p>
-  <p>Email: {{comments.email | titlecase}}</p>
-  <p>Body: {{comments.body | titlecase}}</p>
+<div *ngIf="comments.length; else loading" >
+  <div class="card" *ngFor="let comment of comments">
+    <p>Name: {{comment.name | titlecase}}</p>
+    <p>Email: {{comment.email | titlecase}}</p>
+    <p>Body: {{comment.body | titlecase}}</p>
+  </div>
 </div>
 
 <ng-template #loading>

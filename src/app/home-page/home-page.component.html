@@ -2,9 +2,8 @@
   *ngIf="postsService.posts.length; else loading"
   class="posts"
 >
-  <div class="form-control">
     <input type="text" placeholder="Найти пост..." [(ngModel)]="searchStr">
-  </div>
+
   <table>
     <thead>
     <tr>
@@ -19,28 +18,27 @@
       <td>{{ idx + 1 }}</td>
       <td><button
         class="btn btn-link open"
-        [routerLink]="['/','post', post.id]"
+        [routerLink]="['/' , 'post', post.id]"
       >
         {{ post.title | titlecase }}
       </button>
       </td>
-      <td><button
-        class="btn btn-link open"
-        [routerLink]="['/','user', post.userId]"
-      >
-        Author {{post.userId}}
-      </button></td>
       <td>
-        <a (click)="remove(post.id)">Удалить</a>
+        <button class="btn btn-outline-primary mb-2 mr-2" [routerLink]="['/home/modal/user', post.userId]">Author {{post.userId}}</button>
+        <!--<button [routerLink]="['/','user', post.userId]" [buttonText]="'Author '+post.userId"></button>-->
       </td>
+      <td> <a (click)="remove(post.id)">Удалить</a></td>
     </tr>
     </tbody>
   </table>
+
   <div class="text-center">
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </div>
+  <router-outlet></router-outlet>
 </div>
 
 <ng-template #loading>
   <p class="text-center">Загружаю пости</p>
 </ng-template>
+

@@ -20,7 +20,8 @@ import {QuillModule} from 'ngx-quill';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { CommentsPageComponent } from './comments-page/comments-page.component';
 import { AuthorPageComponent } from './author-page/author-page.component';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ModalPageComponent } from './modal-page/modal-page.component';
 
 registerLocaleData(ukLocale, 'uk');
 
@@ -36,6 +37,7 @@ registerLocaleData(ukLocale, 'uk');
     CreatePageComponent,
     CommentsPageComponent,
     AuthorPageComponent,
+    ModalPageComponent
   ],
   imports: [
     HttpClientModule,
@@ -44,10 +46,12 @@ registerLocaleData(ukLocale, 'uk');
     FormsModule,
     ReactiveFormsModule,
     QuillModule.forRoot(),
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgbModule
   ],
   exports: [RouterModule],
   providers: [AlertService],
+  entryComponents: [ModalPageComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

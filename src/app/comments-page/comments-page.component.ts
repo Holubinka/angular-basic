@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Comments} from '../shared/interfaces';
+import {CommentsService} from '../shared/comments.service';
 
 @Component({
   selector: 'app-comments-page',
@@ -8,12 +9,18 @@ import {Comments} from '../shared/interfaces';
 })
 export class CommentsPageComponent implements OnInit {
 
-  @Input() comments: Comments;
+  @Input() commentsId: number;
+  comments: Comments[] = [];
 
   constructor(
+    private commentsService: CommentsService
   ) { }
 
   ngOnInit() {
+    this.commentsService.getById(this.commentsId)
+      .subscribe(data => {
+        this.comments = data;
+      });
   }
 
 }
