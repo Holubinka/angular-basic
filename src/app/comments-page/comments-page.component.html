@@ -1,0 +1,9 @@
+<div class="card" *ngIf="comments; else loading">
+  <p>Name: {{comments.name | titlecase}}</p>
+  <p>Email: {{comments.email | titlecase}}</p>
+  <p>Body: {{comments.body | titlecase}}</p>
+</div>
+
+<ng-template #loading>
+  <p class="text-center">Загружаю коментарі...</p>
+</ng-template>
