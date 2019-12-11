@@ -8,14 +8,15 @@
     <thead>
     <tr>
       <th>#</th>
-      <th>Название</th>
+      <th>Назва</th>
+      <th>Коментарі</th>
       <th>Автор</th>
-      <th>Действие</th>
+      <th>Дії</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let post of postsService.posts| searchPosts:searchStr | paginate: {itemsPerPage: count, currentPage: p}; let idx = index;">
-      <td>{{ idx + 1 }}</td>
+      <td>{{ count* (p - 1) + idx + 1}}</td>
       <td><button
         class="btn btn-link open"
         [routerLink]="['/' , 'post', post.id]"
@@ -24,10 +25,12 @@
       </button>
       </td>
       <td>
-        <button class="btn btn-outline-primary mb-2 mr-2" [routerLink]="['/home/modal/user', post.userId]">Author {{post.userId}}</button>
-        <!--<button [routerLink]="['/','user', post.userId]" [buttonText]="'Author '+post.userId"></button>-->
+        <button class="btn btn-outline-primary mb-2 mr-2" [routerLink]="['/home/modal']" (click)="this.open(['/home/modal/comments', post.id])">Коментарі</button>
       </td>
-      <td> <a (click)="remove(post.id)">Удалить</a></td>
+      <td>
+        <button class="btn btn-outline-primary mb-2 mr-2" [routerLink]="['/home/modal']" (click)="this.open(['/home/modal/user', post.userId])">Автор {{post.userId}}</button>
+      </td>
+      <td> <a (click)="remove(post.id)">Видалити</a></td>
     </tr>
     </tbody>
   </table>
@@ -39,6 +42,6 @@
 </div>
 
 <ng-template #loading>
-  <p class="text-center">Загружаю пости</p>
+  <p class="text-center">Загружаю пости....</p>
 </ng-template>
 

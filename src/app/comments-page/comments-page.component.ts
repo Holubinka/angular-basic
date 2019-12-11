@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Comments} from '../shared/interfaces';
 import {CommentsService} from '../shared/comments.service';
+import {ActivatedRoute, Params} from '@angular/router';
+import {switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-comments-page',
@@ -13,14 +15,17 @@ export class CommentsPageComponent implements OnInit {
   comments: Comments[] = [];
 
   constructor(
-    private commentsService: CommentsService
+    private commentsService: CommentsService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.commentsService.getById(this.commentsId)
-      .subscribe(data => {
+    this.route.params
+      .pipe(switchMap((params: Params) => {
+        return this.commentsService.getById(params.id);
+      })).subscribe(data => {
         this.comments = data;
-      });
+    });
   }
 
 }

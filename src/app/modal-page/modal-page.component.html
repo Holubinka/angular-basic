@@ -1,7 +1,7 @@
-<div>
+<ng-template #ref let-modal>
   <div class="modal-header" >
     <h4 class="modal-title">Modal title</h4>
-    <button type="button" class="close" aria-label="Close">
+    <button type="button" class="close" aria-label="Close" [routerLink]="['/home']" (click)="modal.close('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
@@ -9,6 +9,6 @@
     <router-outlet></router-outlet>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-light" >Закрити</button>
+    <button type="button" class="btn btn-light" [routerLink]="['/home']" (click)="modal.close('Click')">Закрити</button>
   </div>
-</div>
+</ng-template>

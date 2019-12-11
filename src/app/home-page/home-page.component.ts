@@ -1,6 +1,7 @@
-import {ChangeDetectorRef, Component, ComponentFactoryResolver, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {PostsService} from '../shared/posts.service';
 import {AlertService} from '../shared/services/alert.service';
+import {Router, RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -13,9 +14,12 @@ export class HomePageComponent implements OnInit {
   p = 1;
   count = 10;
 
+  @ViewChild(RouterOutlet, {static: false}) modal;
+
   constructor(
-    private postsService: PostsService,
-    private alert: AlertService
+    public postsService: PostsService,
+    private alert: AlertService,
+    private router: Router
   ) {
   }
 
@@ -36,7 +40,9 @@ export class HomePageComponent implements OnInit {
     });
   }
 
-  openScrollableContent(longContent: any) {
-
+  open(link) {
+    this.router.navigate(['/home/modal']).then(() => {
+      this.modal.component.openScrollableContent(link);
+    });
   }
 }

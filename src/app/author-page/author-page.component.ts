@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {switchMap} from 'rxjs/operators';
 import {ActivatedRoute, Params} from '@angular/router';
-import {CommentsService} from '../shared/comments.service';
-import {Author, Comments} from '../shared/interfaces';
+import {Author} from '../shared/interfaces';
 import {UsersService} from '../shared/users.service';
 
 @Component({

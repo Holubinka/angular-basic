@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule, Provider} from '@angular/core';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 import {registerLocaleData} from '@angular/common';
 import ukLocale from '@angular/common/locales/uk';
 
@@ -22,6 +22,8 @@ import { CommentsPageComponent } from './comments-page/comments-page.component';
 import { AuthorPageComponent } from './author-page/author-page.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ModalPageComponent } from './modal-page/modal-page.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 registerLocaleData(ukLocale, 'uk');
 
@@ -47,11 +49,11 @@ registerLocaleData(ukLocale, 'uk');
     ReactiveFormsModule,
     QuillModule.forRoot(),
     NgxPaginationModule,
-    NgbModule
+    NgbModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   exports: [RouterModule],
   providers: [AlertService],
-  entryComponents: [ModalPageComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

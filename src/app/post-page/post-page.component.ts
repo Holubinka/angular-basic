@@ -1,11 +1,10 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Author, Comments, Post} from '../shared/interfaces';
+import {Component, OnInit} from '@angular/core';
+import {Author, Post} from '../shared/interfaces';
 import {ActivatedRoute, Params} from '@angular/router';
 import {PostsService} from '../shared/posts.service';
 import {Observable, of} from 'rxjs';
 import {switchMap} from 'rxjs/operators';
 import {UsersService} from '../shared/users.service';
-import {CommentsService} from '../shared/comments.service';
 
 @Component({
   selector: 'app-post-page',
