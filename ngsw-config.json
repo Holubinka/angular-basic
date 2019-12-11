@@ -33,7 +33,7 @@
     {
       "name": "heroku-posts",
       "urls": [
-        "https://jsonplaceholder.typicode.com/**"
+        "https://jsonplaceholder.typicode.com"
       ],
       "cacheConfig": {
         "maxSize": 5,
