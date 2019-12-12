@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="text-center example">
+
+    <ul *ngIf="totalRecords" class="pagination">
+      <li [ngClass]="{disabled: activePage === 1}">
+        <a (click)="setPage(1)">First</a>
+      </li>
+      <li [ngClass]="{disabled:activePage === 1}">
+        <a (click)="setPage(activePage - 1)">Previous</a>
+      </li>
+      <li *ngFor="let page of pages.pageArray" [ngClass]="{active:activePage === page}">
+        <a (click)="setPage(page)">{{page}}</a>
+      </li>
+      <li [ngClass]="{disabled:activePage === pages.totalPages}">
+        <a (click)="setPage(activePage+ 1)">Next</a>
+      </li>
+      <li [ngClass]="{disabled:activePage === pages.totalPages}">
+        <a (click)="setPage(pages.totalPages)">Last</a>
+      </li>
+    </ul>
+  </div>
+</div>
+

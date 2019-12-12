@@ -11,8 +11,8 @@ import {Router, RouterOutlet} from '@angular/router';
 export class HomePageComponent implements OnInit {
 
   searchStr = '';
-  p = 1;
-  count = 10;
+  currentPage = 1;
+  itemsPerPage = 10;
 
   @ViewChild(RouterOutlet, {static: false}) modal;
 
@@ -44,5 +44,9 @@ export class HomePageComponent implements OnInit {
     this.router.navigate(['/home/modal']).then(() => {
       this.modal.component.openScrollableContent(link);
     });
+  }
+
+  displayActivePage(activePageNumber: number) {
+    this.currentPage = activePageNumber;
   }
 }

@@ -15,8 +15,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let post of postsService.posts| searchPosts:searchStr | paginate: {itemsPerPage: count, currentPage: p}; let idx = index;">
-      <td>{{ count* (p - 1) + idx + 1}}</td>
+    <tr *ngFor="let post of postsService.posts| searchPosts:searchStr | paginate: currentPage: itemsPerPage; let idx = index;">
+      <td>{{ itemsPerPage* (currentPage - 1) + idx + 1}}</td>
       <td><button
         class="btn btn-link open"
         [routerLink]="['/' , 'post', post.id]"
@@ -35,8 +35,8 @@
     </tbody>
   </table>
 
-  <div class="text-center">
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  <div class="pagination">
+    <app-pagination class="text-center pagination" [totalRecords]= postsService.posts.length [recordsPerPage]=itemsPerPage (onPageChange)="displayActivePage($event)"></app-pagination>
   </div>
   <router-outlet></router-outlet>
 </div>

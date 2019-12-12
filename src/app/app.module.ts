@@ -17,13 +17,14 @@ import {RouterModule} from '@angular/router';
 import {CreatePageComponent} from './create-page/create-page.component';
 import {EditPageComponent} from './edit-page/edit-page.component';
 import {QuillModule} from 'ngx-quill';
-import {NgxPaginationModule} from 'ngx-pagination';
 import { CommentsPageComponent } from './comments-page/comments-page.component';
 import { AuthorPageComponent } from './author-page/author-page.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ModalPageComponent } from './modal-page/modal-page.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { PaginationComponent } from './pagination/pagination.component';
+import { PaginatePipe } from './shared/paginate.pipe';
 
 registerLocaleData(ukLocale, 'uk');
 
@@ -39,7 +40,9 @@ registerLocaleData(ukLocale, 'uk');
     CreatePageComponent,
     CommentsPageComponent,
     AuthorPageComponent,
-    ModalPageComponent
+    ModalPageComponent,
+    PaginationComponent,
+    PaginatePipe
   ],
   imports: [
     HttpClientModule,
@@ -48,7 +51,6 @@ registerLocaleData(ukLocale, 'uk');
     FormsModule,
     ReactiveFormsModule,
     QuillModule.forRoot(),
-    NgxPaginationModule,
     NgbModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],

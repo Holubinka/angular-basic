@@ -11,7 +11,7 @@ export class SearchPipe implements PipeTransform {
     }
 
     return posts.filter(post => {
-      return post.title.toLowerCase().includes(search.toLowerCase())
+      return post.title.toLowerCase().includes(search.toLowerCase());
     });
   }
 
