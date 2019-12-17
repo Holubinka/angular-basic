@@ -1,18 +1,14 @@
-
-li.page-item {
-  width: 100%;
-}
-
 .pagination>.disabled>a  {
   color: #777;
   cursor: not-allowed;
   background-color: #fff;
   border-color: #ddd;
 }
-.pagination>td {
-  padding: 0;
+.pagination>li {
+  display: inline-block;
+  padding-bottom: 1rem;
 }
-.pagination>td>a, .pagination>td>span {
+.pagination>li>a, .pagination>li>span {
   padding: 6px 12px;
   margin-left: -1px;
   line-height: 1.42857143;
