@@ -1,9 +1,30 @@
-.example {
-
-  justify-content: space-between;
-}
 
 li.page-item {
   width: 100%;
 }
 
+.pagination>.disabled>a  {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd;
+}
+.pagination>td {
+  padding: 0;
+}
+.pagination>td>a, .pagination>td>span {
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #337ab7;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.pagination>.active>a{
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}

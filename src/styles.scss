@@ -262,7 +262,6 @@ table th {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 0.7rem 2rem;
   z-index: 1;
@@ -294,7 +293,4 @@ table th {
       color: var(--light-color);
     }
   }
-}
-.pagination {
-  justify-content: center;
 }

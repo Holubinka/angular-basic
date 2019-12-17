@@ -1,9 +1,9 @@
-<div class="container" *ngIf="author; else loading">
+<div class="container item" *ngIf="author; else loading">
   <p>Name: {{author.name}}</p>
   <p>Username: {{author.username}}</p>
   <p>Email: {{author.email}}</p>
-  <p>Адреса</p>
-  <div class="card">
+  <p>Адреса:</p>
+  <div class="item">
     <p>Вулиця: {{author.address.street}}</p>
     <p>Будинок: {{author.address.suite}}</p>
     <p>Місто: {{author.address.city}}</p>

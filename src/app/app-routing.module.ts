@@ -14,10 +14,8 @@ const routes: Routes = [
     path: '', component: MainLayoutComponent, children: [
       {path: '', redirectTo: '/home', pathMatch: 'full'},
       {path: 'home', component: HomePageComponent, children: [
-          {path: 'modal', component: ModalPageComponent, children: [
-              {path: 'user/:id', component: AuthorPageComponent},
-              {path: 'comments/:id', component: CommentsPageComponent}
-            ]},
+        {path: 'user/:id', component: AuthorPageComponent},
+        {path: 'comments/:id', component: CommentsPageComponent}
         ]},
       {path: 'post/:id', component: PostPageComponent},
       {path: 'create', component: CreatePageComponent}

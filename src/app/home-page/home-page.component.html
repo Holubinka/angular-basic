@@ -1,3 +1,4 @@
+<ng-template appRef></ng-template>
 <div
   *ngIf="postsService.posts.length; else loading"
   class="posts"
@@ -25,20 +26,18 @@
       </button>
       </td>
       <td>
-        <button class="btn btn-outline-primary mb-2 mr-2" [routerLink]="['/home/modal']" (click)="this.open(['/home/modal/comments', post.id])">Коментарі</button>
+        <button class="btn btn-outline-primary mb-2 mr-2"  (click)="this.open('Коментарі', ['comments', post.id])">Коментарі</button>
       </td>
       <td>
-        <button class="btn btn-outline-primary mb-2 mr-2" [routerLink]="['/home/modal']" (click)="this.open(['/home/modal/user', post.userId])">Автор {{post.userId}}</button>
+        <button class="btn btn-outline-primary mb-2 mr-2"  (click)="this.open('Дані автора', ['user', post.userId])">Автор {{post.userId}}</button>
       </td>
       <td> <a (click)="remove(post.id)">Видалити</a></td>
     </tr>
     </tbody>
   </table>
 
-  <div class="pagination">
     <app-pagination class="text-center pagination" [totalRecords]= postsService.posts.length [recordsPerPage]=itemsPerPage (onPageChange)="displayActivePage($event)"></app-pagination>
-  </div>
-  <router-outlet></router-outlet>
+
 </div>
 
 <ng-template #loading>

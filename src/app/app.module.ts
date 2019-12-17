@@ -25,6 +25,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { PaginationComponent } from './pagination/pagination.component';
 import { PaginatePipe } from './shared/paginate.pipe';
+import {RefDirective} from './shared/ref.directive';
 
 registerLocaleData(ukLocale, 'uk');
 
@@ -42,7 +43,8 @@ registerLocaleData(ukLocale, 'uk');
     AuthorPageComponent,
     ModalPageComponent,
     PaginationComponent,
-    PaginatePipe
+    PaginatePipe,
+    RefDirective
   ],
   imports: [
     HttpClientModule,
@@ -56,6 +58,7 @@ registerLocaleData(ukLocale, 'uk');
   ],
   exports: [RouterModule],
   providers: [AlertService],
+  entryComponents: [ModalPageComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

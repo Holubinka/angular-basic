@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {Router} from '@angular/router';
 
@@ -7,22 +7,25 @@ import {Router} from '@angular/router';
   templateUrl: './modal-page.component.html',
   styleUrls: ['./modal-page.component.scss']
 })
-export class ModalPageComponent implements AfterViewInit {
-  @ViewChild('ref', {static: false}) modal: any;
-  modalWindow = null;
-  constructor(private modalService: NgbModal,
-              private router: Router) {
+export class ModalPageComponent implements OnInit, AfterViewInit {
+  @Output() close = new EventEmitter<void>();
+  visible = false;
+  title = 'Modal title';
+  constructor(private router: Router) {
   }
 
-  ngAfterViewInit() {
-    if (!this.modalService.hasOpenModals()) {
-      this.modalWindow = this.modalService.open(this.modal, {scrollable: true});
-    }
+  ngOnInit(): void {
+    console.log(this.router.url);
+    console.log('create', this.visible);
   }
 
+  ngAfterViewInit(): void {
+    console.log('After create');
+  }
 
   openScrollableContent(link) {
-    this.router.navigate([link[0], link[1]]);
+    this.visible = true;
+    this.router.navigate(['/home', link[0], link[1] /*{outlets: {name: [link[0], link[1]]}}*/ ]);
+    console.log(this.router.url);
   }
-
 }
