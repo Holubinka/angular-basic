@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule, Provider} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {registerLocaleData} from '@angular/common';
 import ukLocale from '@angular/common/locales/uk';
@@ -19,7 +19,6 @@ import {EditPageComponent} from './edit-page/edit-page.component';
 import {QuillModule} from 'ngx-quill';
 import { CommentsPageComponent } from './comments-page/comments-page.component';
 import { AuthorPageComponent } from './author-page/author-page.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ModalPageComponent } from './modal-page/modal-page.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -53,7 +52,6 @@ registerLocaleData(ukLocale, 'uk');
     FormsModule,
     ReactiveFormsModule,
     QuillModule.forRoot(),
-    NgbModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   exports: [RouterModule],
