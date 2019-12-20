@@ -1,9 +1,9 @@
 import {Component, ComponentFactoryResolver, OnInit, ViewChild} from '@angular/core';
-import {Services} from '../../../../shared/dal/post/services';
 import {AlertService} from '../../../../shared/dal/alert/alert.service';
 import {Router} from '@angular/router';
 import {ModalPageComponent} from '../../../../shared/components/modal-page/modal-page.component';
 import {RefDirective} from '../../../../shared/directives/ref.directive';
+import {PostService} from '../../../../shared/dal/post/services';
 
 @Component({
   selector: 'app-home-page',
@@ -19,7 +19,7 @@ export class HomePageComponent implements OnInit {
   @ViewChild(RefDirective, {static: false}) modal: RefDirective;
 
   constructor(
-    public postsService: Services,
+    public postsService: PostService,
     private alert: AlertService,
     private router: Router,
     private resolver: ComponentFactoryResolver

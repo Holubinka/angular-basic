@@ -6,7 +6,7 @@ import {catchError, delay, map} from 'rxjs/operators';
 import {Post} from './models';
 
 @Injectable({providedIn: 'root'})
-export class Services {
+export class PostService {
 
   posts: Post[] = [];
   active = true;

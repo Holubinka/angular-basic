@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {switchMap} from 'rxjs/operators';
 import {ActivatedRoute, Params} from '@angular/router';
-import {Services} from '../../shared/dal/author/services';
 import {Author} from '../../shared/dal/author/models';
+import {AuthorService} from '../../shared/dal/author/services';
 
 @Component({
   selector: 'app-author-page',
@@ -14,7 +14,7 @@ export class AuthorPageComponent implements OnInit {
   author: Author;
 
   constructor(private route: ActivatedRoute,
-              private userService: Services) { }
+              private userService: AuthorService) { }
 
   ngOnInit() {
     this.route.params

@@ -5,7 +5,7 @@ import {environment} from '../../../../environments/environment';
 import {Comments} from './models';
 
 @Injectable({providedIn: 'root'})
-export class Services {
+export class CommentService {
   constructor(private http: HttpClient) {}
 
   getById(id: number): Observable<Comments[]> {

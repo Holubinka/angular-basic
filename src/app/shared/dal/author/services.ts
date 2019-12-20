@@ -6,7 +6,7 @@ import {map} from 'rxjs/operators';
 import {Author} from './models';
 
 @Injectable({providedIn: 'root'})
-export class Services {
+export class AuthorService {
 
   constructor(private http: HttpClient) {}
 

@@ -4,7 +4,8 @@ import {Observable, of} from 'rxjs';
 import {switchMap} from 'rxjs/operators';
 import {Post} from '../../shared/dal/post/models';
 import {Author} from '../../shared/dal/author/models';
-import {Services} from '../../shared/dal/post/services';
+import {PostService} from '../../shared/dal/post/services';
+import {AuthorService} from '../../shared/dal/author/services';
 
 @Component({
   selector: 'app-post-page',
@@ -19,8 +20,8 @@ export class PostPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private postsService: Services,
-    private usersService: Services,
+    private postsService: PostService,
+    private usersService: AuthorService,
   ) { }
 
   ngOnInit() {

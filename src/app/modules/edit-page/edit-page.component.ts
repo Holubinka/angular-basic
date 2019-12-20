@@ -1,11 +1,11 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
-import {Services} from '../../shared/dal/post/services';
 import {switchMap} from 'rxjs/operators';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Subscription} from 'rxjs';
 import {AlertService} from '../../shared/dal/alert/alert.service';
 import {Post} from '../../shared/dal/post/models';
+import {PostService} from '../../shared/dal/post/services';
 
 @Component({
   selector: 'app-edit-page',
@@ -22,7 +22,7 @@ export class EditPageComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private postsService: Services,
+    private postsService: PostService,
     private alert: AlertService
   ) {
   }

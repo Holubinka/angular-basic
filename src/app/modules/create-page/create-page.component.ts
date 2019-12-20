@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Services} from '../../shared/dal/post/services';
 import {AlertService} from '../../shared/dal/alert/alert.service';
 import {Post} from '../../shared/dal/post/models';
+import {PostService} from '../../shared/dal/post/services';
 
 @Component({
   selector: 'app-create-page',
@@ -15,7 +15,7 @@ export class CreatePageComponent implements OnInit {
   submitButton = false;
 
   constructor(
-    private postsService: Services,
+    private postsService: PostService,
     private alert: AlertService
   ) {
   }
