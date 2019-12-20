@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {Author, Post} from '../shared/interfaces';
 import {ActivatedRoute, Params} from '@angular/router';
-import {PostsService} from '../shared/posts.service';
 import {Observable, of} from 'rxjs';
 import {switchMap} from 'rxjs/operators';
-import {UsersService} from '../shared/users.service';
+import {Post} from '../../shared/dal/post/models';
+import {Author} from '../../shared/dal/author/models';
+import {Services} from '../../shared/dal/post/services';
 
 @Component({
   selector: 'app-post-page',
@@ -19,8 +19,8 @@ export class PostPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private postsService: PostsService,
-    private usersService: UsersService,
+    private postsService: Services,
+    private usersService: Services,
   ) { }
 
   ngOnInit() {

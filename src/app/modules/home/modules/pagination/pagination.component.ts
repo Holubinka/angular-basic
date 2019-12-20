@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
-import {PagerService} from '../shared/services/pager.service';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Model} from '../../../../shared/dal/pagination/model';
 
 @Component({
   selector: 'app-pagination',
@@ -16,7 +16,7 @@ export class PaginationComponent implements OnInit {
   public pages: any = {};
   activePage: number;
 
-  constructor(private pagerService: PagerService) {
+  constructor(private pagerService: Model) {
   }
 
   ngOnInit() {

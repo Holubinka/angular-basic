@@ -4,7 +4,7 @@ import {range} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class PagerService {
+export class Model {
 
   getPageCount(totalItems: number, currentPage: number = 1, pageSize: number = 10) {
 
@@ -12,7 +12,6 @@ export class PagerService {
 
     let startPage: number;
     let endPage: number;
-    console.log('getCount ', currentPage);
     if (totalPages <= 5) {
       startPage = 1;
       endPage = totalPages;

@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, Subscription, throwError} from 'rxjs';
-import {Post} from './interfaces';
-import {environment} from '../../environments/environment';
+import {Post} from '../../interfaces';
+import {environment} from '../../../../environments/environment';
 import {catchError, delay, map} from 'rxjs/operators';
 
 @Injectable({providedIn: 'root'})
-export class PostsService {
+export class Services {
 
   posts: Post[] = [];
   active = true;

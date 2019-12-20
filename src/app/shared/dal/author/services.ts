@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Author} from './interfaces';
-import {environment} from '../../environments/environment';
+import {Author} from '../../shared/interfaces';
+import {environment} from '../../../../environments/environment';
 import {map} from 'rxjs/operators';
 
 @Injectable({providedIn: 'root'})
-export class UsersService {
+export class Services {
 
   constructor(private http: HttpClient) {}
 

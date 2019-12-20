@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Comments} from '../shared/interfaces';
-import {CommentsService} from '../shared/comments.service';
+import {Services} from '../../shared/dal/comment/services';
 import {ActivatedRoute, Params} from '@angular/router';
 import {switchMap} from 'rxjs/operators';
+import {Comments} from '../../shared/dal/comment/models';
 
 @Component({
   selector: 'app-comments-page',
@@ -15,7 +15,7 @@ export class CommentsPageComponent implements OnInit {
   comments: Comments[] = [];
 
   constructor(
-    private commentsService: CommentsService,
+    private commentsService: Services,
     private route: ActivatedRoute
   ) { }
 

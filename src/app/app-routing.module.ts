@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
 import {MainLayoutComponent} from './shared/components/main-layout/main-layout.component';
-import {HomePageComponent} from './home-page/home-page.component';
-import {PostPageComponent} from './post-page/post-page.component';
-import {CreatePageComponent} from './create-page/create-page.component';
-import {AuthorPageComponent} from './author-page/author-page.component';
-import {ModalPageComponent} from './modal-page/modal-page.component';
-import {CommentsPageComponent} from './comments-page/comments-page.component';
+import {HomePageComponent} from './modules/home/pages/home-page/home-page.component';
+import {PostPageComponent} from './modules/post-page/post-page.component';
+import {CreatePageComponent} from './modules/create-page/create-page.component';
+import {AuthorPageComponent} from './modals/author-page/author-page.component';
+import {ModalPageComponent} from './shared/components/modal-page/modal-page.component';
+import {CommentsPageComponent} from './modals/comments-page/comments-page.component';
 
 
 const routes: Routes = [
