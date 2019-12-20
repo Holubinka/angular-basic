@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable, Subscription, throwError} from 'rxjs';
-import {Post} from '../../interfaces';
+import {Observable, throwError} from 'rxjs';
 import {environment} from '../../../../environments/environment';
 import {catchError, delay, map} from 'rxjs/operators';
+import {Post} from './models';
 
 @Injectable({providedIn: 'root'})
 export class Services {

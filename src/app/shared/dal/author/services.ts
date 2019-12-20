@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Author} from '../../shared/interfaces';
 import {environment} from '../../../../environments/environment';
 import {map} from 'rxjs/operators';
+import {Author} from './models';
 
 @Injectable({providedIn: 'root'})
 export class Services {
