@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AlertService} from '../../shared/dal/alert/alert.service';
 import {Post} from '../../shared/dal/post/models';
-import {PostService} from '../../shared/dal/post/services';
+import {PostService} from '../../shared/dal/post/post.service';
 
 @Component({
   selector: 'app-create-page',

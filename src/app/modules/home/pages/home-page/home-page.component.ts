@@ -1,9 +1,9 @@
 import {Component, ComponentFactoryResolver, OnInit, ViewChild} from '@angular/core';
 import {AlertService} from '../../../../shared/dal/alert/alert.service';
 import {Router} from '@angular/router';
-import {ModalPageComponent} from '../../../../shared/components/modal-page/modal-page.component';
+import {ModalPageComponent} from '../../../../static/modal-page/modal-page.component';
 import {RefDirective} from '../../../../shared/directives/ref.directive';
-import {PostService} from '../../../../shared/dal/post/services';
+import {PostService} from '../../../../shared/dal/post/post.service';
 
 @Component({
   selector: 'app-home-page',

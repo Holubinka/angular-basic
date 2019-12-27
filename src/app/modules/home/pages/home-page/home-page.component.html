@@ -16,7 +16,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let post of postsService.posts| searchPosts:searchStr | paginate: currentPage: itemsPerPage; let idx = index;">
+    <tr *ngFor="let post of postsService.posts| searchPosts: searchStr  | paginate: currentPage: itemsPerPage; let idx = index;">
       <td>{{ itemsPerPage* (currentPage - 1) + idx + 1}}</td>
       <td><button
         class="btn btn-link open"

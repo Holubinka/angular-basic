@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {switchMap} from 'rxjs/operators';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Author} from '../../shared/dal/author/models';
-import {AuthorService} from '../../shared/dal/author/services';
+import {AuthorService} from '../../shared/dal/author/authorr.service';
 
 @Component({
   selector: 'app-author-page',

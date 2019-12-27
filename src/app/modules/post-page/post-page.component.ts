@@ -4,8 +4,8 @@ import {Observable, of} from 'rxjs';
 import {switchMap} from 'rxjs/operators';
 import {Post} from '../../shared/dal/post/models';
 import {Author} from '../../shared/dal/author/models';
-import {PostService} from '../../shared/dal/post/services';
-import {AuthorService} from '../../shared/dal/author/services';
+import {PostService} from '../../shared/dal/post/post.service';
+import {AuthorService} from '../../shared/dal/author/authorr.service';
 
 @Component({
   selector: 'app-post-page',

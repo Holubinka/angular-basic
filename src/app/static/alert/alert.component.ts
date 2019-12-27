@@ -1,5 +1,5 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {AlertService} from '../../dal/alert/alert.service';
+import {AlertService} from '../../shared/dal/alert/alert.service';
 import {Subscription} from 'rxjs';
 import {Router} from '@angular/router';
 

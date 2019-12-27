@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 import {switchMap} from 'rxjs/operators';
 import {Comments} from '../../shared/dal/comment/models';
-import {CommentService} from '../../shared/dal/comment/services';
+import {CommentService} from '../../shared/dal/comment/comment.service';
 
 @Component({
   selector: 'app-comments-page',

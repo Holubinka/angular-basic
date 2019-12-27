@@ -36,7 +36,6 @@ export class PostService {
         };
       }),
         catchError( err => {
-          console.log('Error:', err.message);
           return throwError(err);
         })
       );
