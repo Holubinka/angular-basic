@@ -5,9 +5,27 @@ import { Injectable } from '@angular/core';
 })
 export class Model {
 
-  getPageCount(totalItems: number, currentPage: number = 1, pageSize: number = 10) {
+  private _totalRecords;
+  private _recordsPerPage;
 
-    const totalPages = Math.ceil(totalItems / pageSize);
+  get totalRecords() {
+    return this._totalRecords;
+  }
+
+  set totalRecords(value) {
+    this._totalRecords = value;
+  }
+
+  get recordsPerPage() {
+    return this._recordsPerPage;
+  }
+
+  set recordsPerPage(value) {
+    this._recordsPerPage = value;
+  }
+
+  getPageCount( currentPage: number = 1) {
+    const totalPages = Math.ceil(this._totalRecords / this._recordsPerPage);
 
     let startPage: number;
     let endPage: number;
@@ -30,7 +48,7 @@ export class Model {
     // create an array of pages to ng-repeat in the pager control
     const pageArray: number [] = [];
 
-    for (let i = startPage ; i <= endPage; i++) {
+    for (let i = startPage; i <= endPage; i++) {
       pageArray.push(i);
     }
     // return object with all pager properties required by the view

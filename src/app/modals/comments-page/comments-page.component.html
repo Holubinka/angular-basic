@@ -1,8 +1,8 @@
 <div *ngIf="comments.length; else loading" >
   <div class="card" *ngFor="let comment of comments">
-    <p>Name: {{comment.name | titlecase}}</p>
+    <p>Ім'я: {{comment.name | titlecase}}</p>
     <p>Email: {{comment.email | titlecase}}</p>
-    <p>Body: {{comment.body | titlecase}}</p>
+    <p>Коментар: {{comment.body | titlecase}}</p>
   </div>
 </div>
 

@@ -3,7 +3,7 @@
   *ngIf="postsService.posts.length; else loading"
   class="posts"
 >
-    <input type="text" placeholder="Найти пост..." [(ngModel)]="searchStr">
+    <input type="text" placeholder="Найти пост..." [(ngModel)]="searchStr" (ngModelChange)="displayActivePage(1)" >
 
   <table>
     <thead>
@@ -36,7 +36,7 @@
     </tbody>
   </table>
 
-    <app-pagination class="text-center pagination" [totalRecords]= postsService.posts.length [recordsPerPage]=itemsPerPage (onPageChange)="displayActivePage($event)"></app-pagination>
+    <app-pagination class="text-center pagination" (onPageChange)="displayActivePage($event)"></app-pagination>
 
 </div>
 

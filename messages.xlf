@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="f9a78773555c48756dfc7880238a7e0022e7244c" datatype="html">
+        <source>Ім&apos;я: <x id="INTERPOLATION" equiv-text="{{author.name}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7c4eb2311c561509c027b563db12095e4f77e474" datatype="html">
+        <source>Username: <x id="INTERPOLATION" equiv-text="{{author.username}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4b074acc49e5019898aabff1cae48b1809fa54de" datatype="html">
+        <source>Email: <x id="INTERPOLATION" equiv-text="{{author.email}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f290ccb247f9f03ae9285c3bfe4bc02c38c88837" datatype="html">
+        <source>Адреса:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="873fe82d00bdb3a3ed8e608e925b12dc6ac54a04" datatype="html">
+        <source>Вулиця: <x id="INTERPOLATION" equiv-text="{{author.address.street}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d9c0a88e6095827a3d4516ae37ac06f394155f5b" datatype="html">
+        <source>Будинок: <x id="INTERPOLATION" equiv-text="{{author.address.suite}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9fc2ec3cd4240fb383efa05c5a20254d358ce502" datatype="html">
+        <source>Місто: <x id="INTERPOLATION" equiv-text="{{author.address.city}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="362a5a0cdd4223e734f2367c7980c55196bf5c07" datatype="html">
+        <source>Індекс:<x id="INTERPOLATION" equiv-text="{{author.address.zipcode}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="27afe44b87775de84254e09eebb59c8bdea41d7c" datatype="html">
+        <source>Загружаю дані....</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, DoCheck, EventEmitter, Inject, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Model} from '../../../../shared/dal/pagination/model';
 
 @Component({
@@ -7,10 +7,15 @@ import {Model} from '../../../../shared/dal/pagination/model';
   styleUrls: ['./pagination.component.scss']
 })
 export class PaginationComponent implements OnInit {
+  get totalRecords() {
+    return this._totalRecords;
+  }
 
-  @Input() totalRecords = 0;
-  @Input() recordsPerPage = 0;
+  set totalRecords(value) {
+    this._totalRecords = value;
+  }
 
+  private _totalRecords;
   @Output() onPageChange: EventEmitter<number> = new EventEmitter();
 
   public pages: any = {};
@@ -19,16 +24,17 @@ export class PaginationComponent implements OnInit {
   constructor(private pagerService: Model) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.setPage(1);
   }
 
   setPage(page: number) {
+    this._totalRecords = this.pagerService.totalRecords;
     if (page < 1 || page > this.pages.totalPages) {
       return;
     }
     this.activePage = page;
     this.onPageChange.emit(this.activePage);
-    this.pages = this.pagerService.getPageCount(this.totalRecords, this.activePage, this.recordsPerPage);
+    this.pages = this.pagerService.getPageCount(this.activePage);
   }
 }
