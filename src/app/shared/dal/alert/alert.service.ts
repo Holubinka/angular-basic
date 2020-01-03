@@ -1,14 +1,10 @@
 import {Injectable} from '@angular/core';
 import {Subject} from 'rxjs';
+import {Alert} from './models';
 
-export type AlertType = 'success' | 'warning' | 'danger';
-
-export interface Alert {
-  type: AlertType;
-  text: string;
-}
-
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AlertService {
   public alert$ = new Subject<Alert>();
 

@@ -15,7 +15,6 @@ import {SearchPipe} from './shared/pipe/search.pipe';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {CreatePageComponent} from './modules/create-page/create-page.component';
-import {EditPageComponent} from './modules/edit-page/edit-page.component';
 import {QuillModule} from 'ngx-quill';
 import { CommentsPageComponent } from './modals/comments-page/comments-page.component';
 import { AuthorPageComponent } from './modals/author-page/author-page.component';
@@ -34,7 +33,6 @@ registerLocaleData(ukLocale, 'uk');
     MainLayoutComponent,
     HomePageComponent,
     PostPageComponent,
-    EditPageComponent,
     SearchPipe,
     AlertComponent,
     CreatePageComponent,
@@ -55,7 +53,6 @@ registerLocaleData(ukLocale, 'uk');
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   exports: [RouterModule],
-  providers: [AlertService],
   entryComponents: [ModalPageComponent],
   bootstrap: [AppComponent]
 })

@@ -6,10 +6,15 @@
 
   <ul>
     <li routerLinkActive="active">
-      <a [routerLink]="['/', 'home']">Головна</a>
+      <a [routerLink]="['/', 'home']" i18n>Головна</a>
     </li>
     <li routerLinkActive="active">
-      <a [routerLink]="['/', 'create']">Створити</a>
+      <a [routerLink]="['/', 'create']" i18n>Створити</a>
+    </li>
+    <li>
+      <select [(ngModel)]="selectedValue" class="btn btn-link btn-dark">
+        <option *ngFor="let l of languages" [ngValue]="l">{{l.name}}</option>
+      </select>
     </li>
   </ul>
 </nav>

@@ -5,9 +5,10 @@ import {environment} from '../../../../environments/environment';
 import {map} from 'rxjs/operators';
 import {Author} from './models';
 
-@Injectable({providedIn: 'root'})
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthorService {
-
   constructor(private http: HttpClient) {}
 
   getById(id: number): Observable<Author> {

@@ -3,14 +3,15 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class Model {
-
+export class PaginateService {
   getPageCount(totalItems: number, currentPage: number = 1, pageSize: number = 10) {
 
     const totalPages = Math.ceil(totalItems / pageSize);
+    const pageArray: number [] = [];
 
     let startPage: number;
     let endPage: number;
+
     if (totalPages <= 5) {
       startPage = 1;
       endPage = totalPages;
@@ -27,13 +28,10 @@ export class Model {
       }
     }
 
-    // create an array of pages to ng-repeat in the pager control
-    const pageArray: number [] = [];
-
     for (let i = startPage ; i <= endPage; i++) {
       pageArray.push(i);
     }
-    // return object with all pager properties required by the view
+
     return {
       pageArray,
       totalPages

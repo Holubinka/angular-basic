@@ -10,18 +10,15 @@ import {PostService} from '../../shared/dal/post/post.service';
   styleUrls: ['./create-page.component.scss']
 })
 export class CreatePageComponent implements OnInit {
-
   form: FormGroup;
   submitButton = false;
 
   constructor(
     private postsService: PostService,
     private alert: AlertService
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
-
     this.form = new FormGroup({
       title: new FormControl(null, Validators.required),
       text: new FormControl(null, Validators.required),
@@ -47,5 +44,4 @@ export class CreatePageComponent implements OnInit {
       this.submitButton = false;
     });
   }
-
 }

@@ -1,18 +1,18 @@
 <div class="container item" *ngIf="author; else loading">
-  <p>Name: {{author.name}}</p>
+  <p i18n>Ім'я: {{author.name}}</p>
   <p>Username: {{author.username}}</p>
   <p>Email: {{author.email}}</p>
-  <p>Адреса:</p>
+  <p i18n>Адреса:</p>
   <div class="item">
-    <p>Вулиця: {{author.address.street}}</p>
-    <p>Будинок: {{author.address.suite}}</p>
-    <p>Місто: {{author.address.city}}</p>
-    <p>Індекс:{{author.address.zipcode}}</p>
+    <p i18n>Вулиця: {{author.address.street}}</p>
+    <p i18n>Будинок: {{author.address.suite}}</p>
+    <p i18n>Місто: {{author.address.city}}</p>
+    <p i18n>Індекс:{{author.address.zipcode}}</p>
   </div>
-  <p>Номер телефону: {{author.phone}}</p>
-  <p>Вебсайт: {{author.website}}</p>
+  <p i18n>Номер телефону: {{author.phone}}</p>
+  <p i18n>Вебсайт: {{author.website}}</p>
 </div>
 
 <ng-template #loading>
-  <p class="text-center">Загружаю дані....</p>
+  <p class="text-center" i18n>Загружаю дані....</p>
 </ng-template>

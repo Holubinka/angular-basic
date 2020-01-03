@@ -5,7 +5,7 @@ import {switchMap} from 'rxjs/operators';
 import {Post} from '../../shared/dal/post/models';
 import {Author} from '../../shared/dal/author/models';
 import {PostService} from '../../shared/dal/post/post.service';
-import {AuthorService} from '../../shared/dal/author/authorr.service';
+import {AuthorService} from '../../shared/dal/author/author.service';
 
 @Component({
   selector: 'app-post-page',
@@ -13,7 +13,6 @@ import {AuthorService} from '../../shared/dal/author/authorr.service';
   styleUrls: ['./post-page.component.scss']
 })
 export class PostPageComponent implements OnInit {
-
   posts$: Observable<Post>;
   user: Observable<Author>;
   error = '';
@@ -37,5 +36,4 @@ export class PostPageComponent implements OnInit {
         }
     });
   }
-
 }

@@ -11,6 +11,7 @@ export class CommentService {
   getById(id: number): Observable<Comments[]> {
     const params = new HttpParams()
       .set('postId', id.toString());
+
     return this.http.get<Comments[]>(`${environment.fbDbUrl}/comments`, {params});
   }
 

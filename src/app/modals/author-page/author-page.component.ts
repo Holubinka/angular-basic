@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {switchMap} from 'rxjs/operators';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Author} from '../../shared/dal/author/models';
-import {AuthorService} from '../../shared/dal/author/authorr.service';
+import {AuthorService} from '../../shared/dal/author/author.service';
 
 @Component({
   selector: 'app-author-page',
@@ -10,7 +10,6 @@ import {AuthorService} from '../../shared/dal/author/authorr.service';
   styleUrls: ['./author-page.component.scss']
 })
 export class AuthorPageComponent implements OnInit {
-
   author: Author;
 
   constructor(private route: ActivatedRoute,
@@ -24,5 +23,4 @@ export class AuthorPageComponent implements OnInit {
         this.author = data;
     });
   }
-
 }

@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-layout.component.scss']
 })
 export class MainLayoutComponent implements OnInit {
+  languages = [
+    {id: 'ua', name: 'Ua'},
+    {id: 'en', name: 'En'}
+  ];
+  selectedValue = this.languages[0];
 
   constructor() { }
 
   ngOnInit() {
   }
-
 }

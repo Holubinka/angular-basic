@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -8,8 +8,10 @@ import {Router} from '@angular/router';
 })
 export class ModalPageComponent {
   @Output() close = new EventEmitter<void>();
+
   visible = false;
   title = 'Modal title';
+
   constructor(private router: Router) {
   }
 

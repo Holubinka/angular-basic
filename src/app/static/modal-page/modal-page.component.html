@@ -1,13 +1,7 @@
-<!--  <div  *ngIf="visible" class="dialog">
-    <button *ngIf="closable" [routerLink]="['/home']" (click)="close()" aria-label="Close" class="dialog__close-btn">X</button>
-    <router-outlet></router-outlet>
-    <button *ngIf="visible" [routerLink]="['/home']" aria-label="Close" class="dialog__close-btn" (click)="close()">Закрити</button>
-  </div>
-  <div *ngIf="visible" class="overlay" (click)="close()"></div>-->
-<div class="backdrop"></div>
+<div class="backdrop" (click)="close.emit()"></div>
 <div *ngIf="visible" class="modal">
-  <h1>{{title}}</h1>
+  <h1 i18n>{{title}}</h1>
   <router-outlet></router-outlet>
- <button *ngIf="visible" [routerLink]="['/home']" class="btn" (click)="close.emit()">Close</button>
+ <button *ngIf="visible" [routerLink]="['/home']" class="btn" (click)="close.emit()" i18n>Закрити</button>
 </div>
 

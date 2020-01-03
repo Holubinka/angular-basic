@@ -2,19 +2,19 @@
 
     <ul *ngIf="totalRecords" class="pagination">
       <li [ngClass]="{disabled: activePage === 1}">
-        <a (click)="setPage(1)">First</a>
+        <a (click)="setPage(1)" i18n>Перша</a>
       </li>
       <li [ngClass]="{disabled:activePage === 1}">
-        <a (click)="setPage(activePage - 1)">Previous</a>
+        <a (click)="setPage(activePage - 1)" i18n>Попередня</a>
       </li>
       <li *ngFor="let page of pages.pageArray" [ngClass]="{active:activePage === page}">
         <a (click)="setPage(page)">{{page}}</a>
       </li>
       <li [ngClass]="{disabled:activePage === pages.totalPages}">
-        <a (click)="setPage(activePage+ 1)">Next</a>
+        <a (click)="setPage(activePage+ 1)" i18n>Наступна</a>
       </li>
       <li [ngClass]="{disabled:activePage === pages.totalPages}">
-        <a (click)="setPage(pages.totalPages)">Last</a>
+        <a (click)="setPage(pages.totalPages)" i18n>Остання</a>
       </li>
     </ul>
   </div>
