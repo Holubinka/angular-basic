@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server/index.js",
+    "start:heroku": "node server/index.js",
     "heroku-prebuild": "npm install",
     "heroku-postbuild": "npm run build-i18n:en && npm run build-i18n:ua",
     "build-i18n:ua": "ng build --output-path=dist/browser/ua --aot --prod --base-href /ua/ --i18n-file=src/locale/messages.ua.xlf --i18n-format=xlf --i18n-locale=ua",

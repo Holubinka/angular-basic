@@ -36,7 +36,7 @@
       </trans-unit>
       <trans-unit id="0e43bd6dde5d215c0063ba1146954fdbc92663a4" datatype="html">
         <source>Найти пост...</source>
-        <target>Find a post ...</target>
+        <target>Найти пост...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/home/pages/home-page/home-page.component.html</context>
           <context context-type="linenumber">6</context>
