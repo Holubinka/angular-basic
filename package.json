@@ -3,23 +3,18 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "node server/index.js",
     "heroku-prebuild": "npm install",
-    "heroku-postbuild": "for lang in en ua; do LANG=$lang npm run build:i18n & done; wait;",
+    "heroku-postbuild": "npm run build-i18n:en && npm run build-i18n:ua",
+    "build-i18n:ua": "ng build --output-path=dist/browser/ua --aot --prod --base-href /ua/ --i18n-file=src/locale/messages.ua.xlf --i18n-format=xlf --i18n-locale=ua",
+    "build-i18n:en": "ng build --output-path=dist/browser/en --aot --prod --base-href /en/ --i18n-file=src/locale/messages.en.xlf --i18n-format=xlf --i18n-locale=en",
     "start1": "ng serve",
     "start:en": "ng serve --configuration=en",
     "start:ua": "ng serve --configuration=ua",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "build:client-and-server-bundles-i18n": "ng run angular-basics:build:production-ua && ng run angular-basics:build:production-en",
-    "build:client-and-server-bundles": "ng build --prod && ng run angular-basics:server:production",
-    "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:i18n-ssr": "npm run build:client-and-server-bundles-i18n && npm run serve:ssr",
-    "compile:server": "tsc -p server.tsconfig.json",
-    "serve:ssr": "node server.js",
-    "build:i18n": "npm run build -- --output-path=dist/browser/${LANG:-en} --bh /${LANG:-en}/ --i18n-file=src/locale/messages.${LANG:-en}.xlf --locale=${LANG:-en}"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -46,7 +41,8 @@
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "typescript": "~3.4.3",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "compression": "latest"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.801.0",
