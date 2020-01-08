@@ -60,6 +60,52 @@
               ],
               "serviceWorker": true,
               "ngswConfigPath": "ngsw-config.json"
+            },
+            "production-en": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "baseHref": "/en/",
+              "outputPath": "dist/browser/en/",
+              "i18nFile": "src/locale/messages.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en",
+              "i18nMissingTranslation": "error"
+            },
+            "production-ua": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "baseHref": "ua",
+              "outputPath": "dist/ua",
+              "i18nFile": "src/locale/messages.ua.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "ua",
+              "i18nMissingTranslation": "error"
             }
           }
         },
@@ -71,6 +117,12 @@
           "configurations": {
             "production": {
               "browserTarget": "angular-basics:build:production"
+            },
+            "en": {
+              "browserTarget": "angular-basics:build:production-en"
+            },
+            "ua": {
+              "browserTarget": "angular-basics:build:production-ua"
             }
           }
         },

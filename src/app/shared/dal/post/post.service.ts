@@ -5,9 +5,10 @@ import {environment} from '../../../../environments/environment';
 import {catchError, delay, map} from 'rxjs/operators';
 import {Post} from './models';
 
-@Injectable({providedIn: 'root'})
+@Injectable({
+  providedIn: 'root'
+})
 export class PostService {
-
   posts: Post[] = [];
   active = true;
 

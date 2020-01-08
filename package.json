@@ -5,12 +5,16 @@
     "ng": "ng",
     "start": "node server.js",
     "start1": "ng serve",
+    "start:en": "ng serve --i18n-locale en --i18n-format xlf --i18n-file src/locale/messages.en.xlf --output-path=dist/en --baseHref /en/",
+    "start:ua": "ng serve --i18n-locale ua --i18n-format xlf --i18n-file src/locale/messages.ua.xlf --output-path=dist/ua --baseHref /ua/",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod",
-    "int:extract": "ng xi18n"
+    "postinstall:en": "ng build --aot --prod ",
+    "postinstall:ua": "ng build --aot --prod --i18n-locale ua --i18n-format xlf --i18n-file src/locale/messages.ua.xlf --output-path=dist/ua --baseHref /ua/",
+    "postinstall": "npm run postinstall:ua && npm run postinstall:en",
+    "int:extract": "ng xi18n --output-path src/locale"
   },
   "private": true,
   "dependencies": {

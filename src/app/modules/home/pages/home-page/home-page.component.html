@@ -3,44 +3,45 @@
   *ngIf="postsService.posts.length; else loading"
   class="posts"
 >
-    <input type="text" placeholder="Найти пост..." [(ngModel)]="searchStr" (ngModelChange)="displayActivePage(1)" >
+  <input type="text" placeholder="Найти пост..." [(ngModel)]="searchStr" i18n>
+  <ng-container *ngIf="(postsService.posts | searchPosts: searchStr) as result">
+    <table>
+      <thead>
+      <tr>
+        <th>#</th>
+        <th i18n>Назва</th>
+        <th i18n>Коментарі</th>
+        <th i18n>Автор</th>
+        <th i18n>Дії</th>
+      </tr>
+      </thead>
+      <tbody>
 
-  <table>
-    <thead>
-    <tr>
-      <th>#</th>
-      <th>Назва</th>
-      <th>Коментарі</th>
-      <th>Автор</th>
-      <th>Дії</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let post of postsService.posts| searchPosts: searchStr  | paginate: currentPage: itemsPerPage; let idx = index;">
-      <td>{{ itemsPerPage* (currentPage - 1) + idx + 1}}</td>
-      <td><button
-        class="btn btn-link open"
-        [routerLink]="['/' , 'post', post.id]"
-      >
-        {{ post.title | titlecase }}
-      </button>
-      </td>
-      <td>
-        <button class="btn btn-outline-primary mb-2 mr-2"  (click)="this.open('Коментарі', ['comments', post.id])">Коментарі</button>
-      </td>
-      <td>
-        <button class="btn btn-outline-primary mb-2 mr-2"  (click)="this.open('Дані автора', ['user', post.userId])">Автор {{post.userId}}</button>
-      </td>
-      <td> <a (click)="remove(post.id)">Видалити</a></td>
-    </tr>
-    </tbody>
-  </table>
+        <tr *ngFor="let post of result | paginate: currentPage: itemsPerPage; let idx = index;">
+          <td>{{ itemsPerPage * (currentPage - 1) + idx + 1}}</td>
+          <td><button
+            class="btn btn-link open"
+            [routerLink]="['/' , 'post', post.id]"
+          >
+            {{ post.title | titlecase }}
+          </button>
+          </td>
+          <td>
+            <button class="btn btn-outline-primary mb-2 mr-2"  (click)="this.open('Коментарі', ['comments', post.id])" i18n>Коментарі</button>
+          </td>
+          <td>
+            <button class="btn btn-outline-primary mb-2 mr-2"  (click)="this.open('Дані автора', ['user', post.userId])" i18n>Автор {{post.userId}}</button>
+          </td>
+          <td> <a (click)="remove(post.id)" i18n>Видалити</a></td>
+        </tr>
+      </tbody>
+    </table>
 
-    <app-pagination class="text-center pagination" (onPageChange)="displayActivePage($event)"></app-pagination>
-
+    <app-pagination class="text-center pagination" [totalRecords]=result.length [recordsPerPage]=itemsPerPage (onPageChange)="displayActivePage($event)"></app-pagination>
+  </ng-container>
 </div>
 
 <ng-template #loading>
-  <p class="text-center">Загружаю пости....</p>
+  <p class="text-center" i18n>Загружаю пости....</p>
 </ng-template>
 

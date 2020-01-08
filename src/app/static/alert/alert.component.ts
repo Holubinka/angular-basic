@@ -9,7 +9,6 @@ import {Router} from '@angular/router';
   styleUrls: ['./alert.component.scss']
 })
 export class AlertComponent implements OnInit, OnDestroy {
-
   @Input() delay = 5000;
 
   public text: string;
@@ -17,8 +16,10 @@ export class AlertComponent implements OnInit, OnDestroy {
 
   aSub: Subscription;
 
-  constructor(private alertService: AlertService,
-              private router: Router) { }
+  constructor(
+    private alertService: AlertService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.aSub = this.alertService.alert$.subscribe(alert => {

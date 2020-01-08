@@ -10,8 +10,8 @@ import {CommentService} from '../../shared/dal/comment/comment.service';
   styleUrls: ['./comments-page.component.scss']
 })
 export class CommentsPageComponent implements OnInit {
-
   @Input() commentsId: number;
+
   comments: Comments[] = [];
 
   constructor(
@@ -27,5 +27,4 @@ export class CommentsPageComponent implements OnInit {
         this.comments = data;
     });
   }
-
 }

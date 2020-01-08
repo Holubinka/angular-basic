@@ -1,11 +1,11 @@
 <div *ngIf="comments.length; else loading" >
   <div class="card" *ngFor="let comment of comments">
-    <p>Ім'я: {{comment.name | titlecase}}</p>
+    <p i18n>Ім'я: {{comment.name | titlecase}}</p>
     <p>Email: {{comment.email | titlecase}}</p>
-    <p>Коментар: {{comment.body | titlecase}}</p>
+    <p i18n>Коментар: {{comment.body | titlecase}}</p>
   </div>
 </div>
 
 <ng-template #loading>
-  <p class="text-center">Загружаю коментарі...</p>
+  <p class="text-center" i18n>Загружаю коментарі...</p>
 </ng-template>

@@ -11,20 +11,18 @@ import {PostService} from '../../../../shared/dal/post/post.service';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
+  @ViewChild(RefDirective, {static: false}) modal: RefDirective;
 
   searchStr = '';
   currentPage = 1;
   itemsPerPage = 10;
-
-  @ViewChild(RefDirective, {static: false}) modal: RefDirective;
 
   constructor(
     public postsService: PostService,
     private alert: AlertService,
     private router: Router,
     private resolver: ComponentFactoryResolver
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     this.postsService.getAll().subscribe(posts => {
@@ -33,7 +31,6 @@ export class HomePageComponent implements OnInit {
         this.postsService.active = false;
       }
     });
-
   }
 
   remove(id: number) {
@@ -44,14 +41,14 @@ export class HomePageComponent implements OnInit {
   }
 
   open(modalTitle, link) {
-      const modalFactory = this.resolver.resolveComponentFactory(ModalPageComponent);
+    const modalFactory = this.resolver.resolveComponentFactory(ModalPageComponent);
+    this.modal.containerRef.clear();
+    const component = this.modal.containerRef.createComponent(modalFactory);
+    component.instance.title = modalTitle;
+    component.instance.openScrollableContent(link);
+    component.instance.close.subscribe(() => {
       this.modal.containerRef.clear();
-      const component = this.modal.containerRef.createComponent(modalFactory);
-      component.instance.title = modalTitle;
-      component.instance.openScrollableContent(link);
-      component.instance.close.subscribe(() => {
-        this.modal.containerRef.clear();
-      });
+    });
   }
 
   displayActivePage(activePageNumber: number) {

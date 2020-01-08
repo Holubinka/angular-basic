@@ -1,23 +1,23 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
-  <h1>Створення нового поста</h1>
+  <h1 i18n>Створення нового поста</h1>
 
   <div
     [ngClass]="{invalid: form.get('title').touched && form.get('title').invalid}"
   >
-    <label for="title">Назва поста:</label>
+    <label for="title" i18n>Назва поста:</label>
     <input id="title" type="text" formControlName="title">
     <div
       *ngIf="form.get('title').touched && form.get('title').invalid"
       class="validation"
     >
-      <small *ngIf="form.get('title').errors.required">
+      <small *ngIf="form.get('title').errors.required" i18n>
         Введіть назву поста...
       </small>
     </div>
   </div>
 
   <div>
-    <label>Контент поста:</label>
+    <label i18n>Контент поста:</label>
     <quill-editor formControlName="text"></quill-editor>
   </div>
 
@@ -26,12 +26,13 @@
       type="submit"
       class="btn  btn-dark"
       [disabled]="form.invalid || submitButton"
+      i18n
     >Створити пост</button>
 
     <button
       class="btn  btn-dark"
       [routerLink]="['/home']"
+      i18n
     >Відміна</button>
   </div>
-
 </form>

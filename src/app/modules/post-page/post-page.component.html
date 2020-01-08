@@ -6,11 +6,11 @@
       <div class="header">
         <h4>{{post.title | titlecase}}</h4>
 
-        <button routerLink="/" class="btn btn-link">На головну</button>
+        <button routerLink="/" class="btn btn-link" i18n>На головну</button>
       </div>
 
       <div class="info" *ngIf="user | async as users">
-        <strong>Автор: {{users.name}}</strong>
+        <strong i18n>Автор: {{users.name}}</strong>
       </div>
 
       <div >
@@ -23,6 +23,6 @@
   </div>
 
   <ng-template #loading>
-    <p class="text-center">Загружаю пост...</p>
+    <p class="text-center" i18n>Загружаю пост...</p>
   </ng-template>
 </ng-template>
