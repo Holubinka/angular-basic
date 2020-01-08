@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start:heroku": "node server/index.js",
+    "start:heroku": "node server.js",
     "heroku-prebuild": "npm install",
     "heroku-postbuild": "npm run build-i18n:en && npm run build-i18n:ua",
     "build-i18n:ua": "ng build --aot --prod --configuration=production-ua",
