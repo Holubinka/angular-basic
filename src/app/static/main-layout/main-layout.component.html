@@ -12,10 +12,11 @@
       <a [routerLink]="['/', 'create']" i18n>Створити</a>
     </li>
     <li>
-      <select [(ngModel)]="selectedValue" class="btn btn-link btn-dark">
-        <option *ngFor="let l of languages" [ngValue]="l">{{l.name}}</option>
+      <select [ngModel]="selectedValue | titlecase" class="btn btn-link btn-dark" (change)="onChange($event.target.value)" >
+        <option *ngFor="let l of locales">{{l.code | titlecase}}</option>
       </select>
     </li>
+
   </ul>
 </nav>
 
