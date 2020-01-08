@@ -3,7 +3,6 @@
   <h1>
     <a [routerLink]="['/']">Angular Admin</a>
   </h1>
-  <p>Current: {{locale}}</p>
   <ul>
     <li routerLinkActive="active">
       <a [routerLink]="['/', 'home']" i18n>Головна</a>
@@ -11,14 +10,14 @@
     <li routerLinkActive="active">
       <a [routerLink]="['/', 'create']" i18n>Створити</a>
     </li>
-   <!-- <li>
+    <li>
       <select [ngModel]="selectedValue | titlecase" class="btn btn-link btn-dark" (change)="onChange($event)" >
         <option *ngFor="let l of locales" [ngValue]="l.code">{{l.code | titlecase}}</option>
       </select>
-    </li>-->
-    <li *ngFor="let locale of locales">
-      <a [href]="'/' + locale.code + '/'">{{ locale.code }}</a>
     </li>
+ <!--   <li *ngFor="let locale of locales">
+      <a [href]="'/' + locale.code + '/'">{{ locale.code }}</a>
+    </li>-->
 
   </ul>
 </nav>

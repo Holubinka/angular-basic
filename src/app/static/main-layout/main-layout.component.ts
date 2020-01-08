@@ -26,7 +26,7 @@ export class MainLayoutComponent implements OnInit {
               @Inject(LOCALE_ID) public locale: string) { }
 
   ngOnInit() {
-    /*this.selectedValue = location.pathname.split('/')[1];*/
+    this.selectedValue = location.pathname.split('/')[1];
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
