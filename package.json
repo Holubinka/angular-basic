@@ -19,7 +19,7 @@
     "build:i18n-ssr": "npm run build:client-and-server-bundles-i18n && npm run serve:ssr",
     "compile:server": "tsc -p server.tsconfig.json",
     "serve:ssr": "node server.js",
-    "build:i18n": "npm run build -- --output-path=dist/browser/${LANG:-en} --bh /${LANG:-en}/ --i18n-file=locale/messages.${LANG:-en}.xlf --locale=${LANG:-en}",
+    "build:i18n": "npm run build -- --output-path=dist/browser/${LANG:-en} --bh /${LANG:-en}/ --i18n-file=locale/messages.${LANG:-en}.xlf --locale=${LANG:-en}"
   },
   "private": true,
   "dependencies": {
