@@ -30,6 +30,13 @@
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="0e43bd6dde5d215c0063ba1146954fdbc92663a4" datatype="html">
+        <source>Найти пост...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/home/pages/home-page/home-page.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="36ebe04319bf0b7a4988cc335c7a7c91fa50074e" datatype="html">
         <source>Назва</source>
         <context-group purpose="location">
@@ -210,7 +217,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="362a5a0cdd4223e734f2367c7980c55196bf5c07" datatype="html">
-        <source>Індекс: <x id="INTERPOLATION" equiv-text="{{author.address.zipcode}}"/></source>
+        <source>Індекс:<x id="INTERPOLATION" equiv-text="{{author.address.zipcode}}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
           <context context-type="linenumber">10</context>
@@ -238,7 +245,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="920419c77e04086718bf30bdb80ba84d04cbe296" datatype="html">
-        <source>Перший</source>
+        <source>Перша</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/home/modules/pagination/pagination.component.html</context>
           <context context-type="linenumber">5</context>

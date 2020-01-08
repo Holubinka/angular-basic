@@ -2,6 +2,7 @@
   <h1 i18n>Створення нового поста</h1>
 
   <div
+    class="form-control"
     [ngClass]="{invalid: form.get('title').touched && form.get('title').invalid}"
   >
     <label for="title" i18n>Назва поста:</label>
@@ -17,14 +18,14 @@
   </div>
 
   <div>
-    <label i18n>Контент поста:</label>
+    <label class="form-control" i18n>Контент поста:</label>
     <quill-editor formControlName="text"></quill-editor>
   </div>
 
   <div class="navbar">
     <button
       type="submit"
-      class="btn  btn-dark"
+      class="btn btn-dark"
       [disabled]="form.invalid || submitButton"
       i18n
     >Створити пост</button>

@@ -3,7 +3,10 @@
   *ngIf="postsService.posts.length; else loading"
   class="posts"
 >
-  <input type="text" placeholder="Найти пост..." [(ngModel)]="searchStr" i18n>
+  <div class="form-control">
+    <input type="text" placeholder="Найти пост..." [(ngModel)]="searchStr" i18n-placeholder/>
+  </div>
+
   <ng-container *ngIf="(postsService.posts | searchPosts: searchStr) as result">
     <table>
       <thead>

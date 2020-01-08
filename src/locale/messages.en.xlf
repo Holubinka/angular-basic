@@ -34,6 +34,14 @@
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="0e43bd6dde5d215c0063ba1146954fdbc92663a4" datatype="html">
+        <source>Найти пост...</source>
+        <target>Find a post ...</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/home/pages/home-page/home-page.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="36ebe04319bf0b7a4988cc335c7a7c91fa50074e" datatype="html">
         <source>Назва</source>
         <target>Name</target>
