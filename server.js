@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 
 // Serve only the static files form the angularapp directory
-app.use(express.static(__dirname + '/browser'));
+app.use(express.static(__dirname + '/dist/browser'));
   // All regular routes use the Universal engine
   app.get('/*', (req, res) => {
     const supportedLocales = ['ua', 'en'];
@@ -14,7 +14,7 @@ app.use(express.static(__dirname + '/browser'));
     // check if the requested url has a correct format '/locale' and matches any of the supportedLocales
     const locale = (matches && supportedLocales.indexOf(matches[1]) !== -1) ? matches[1] : defaultLocale;
 
-    res.sendFile(path.join(__dirname+`browser/${locale}/index.html`));
+    res.sendFile(path.join(__dirname+`/dist/browser/${locale}/index.html`));
   });
 
   // Start up the Node server
