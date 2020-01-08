@@ -3,22 +3,22 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start:heroku": "node dist/server",
+    "start": "node server.js",
     "heroku-prebuild": "npm install",
     "heroku-postbuild": "npm run build:i18n-ssr",
-    "start": "ng serve",
+    "start1": "ng serve",
     "start:en": "ng serve --configuration=en",
     "start:ua": "ng serve --configuration=ua",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:client-and-server-bundles-i18n": "ng run angular-basics:build:production-ua && ng run angular-basics:build:production-en && ng run angular-basics:server:production",
+    "build:client-and-server-bundles-i18n": "ng run angular-basics:build:production-ua && ng run angular-basics:build:production-en",
     "build:client-and-server-bundles": "ng build --prod && ng run angular-basics:server:production",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:i18n-ssr": "npm run build:client-and-server-bundles-i18n && npm run compile:server",
+    "build:i18n-ssr": "npm run build:client-and-server-bundles-i18n && npm run serve:ssr",
     "compile:server": "tsc -p server.tsconfig.json",
-    "serve:ssr": "node dist/server"
+    "serve:ssr": "node server.js"
   },
   "private": true,
   "dependencies": {
