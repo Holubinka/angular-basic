@@ -1,4 +1,4 @@
-import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {filter} from 'rxjs/operators';
 
@@ -20,13 +20,15 @@ export class MainLayoutComponent implements OnInit {
     }
   ];
   currentUrl = '';
-  selectedValue: string;
+  selectedValue: any;
 
-  constructor(private router: Router,
-              @Inject(LOCALE_ID) public locale: string) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    this.selectedValue = location.pathname.split('/')[1];
+    this.selectedValue = this.locales.filter((language) => {
+      return language.code ===  location.pathname.split('/')[1];
+    }).pop().text;
+
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
@@ -34,9 +36,7 @@ export class MainLayoutComponent implements OnInit {
       });
   }
 
-  onChange(event: Event) {
-    console.log(event);
-    console.log(window.location);
-    //window.location.href = '/' + this.currentUrl;
+  onChange(event: any) {
+    window.location.href = 'http://' + location.host + '/' + event.target.value + '/' + this.currentUrl;
   }
 }
