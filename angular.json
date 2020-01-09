@@ -7,12 +7,14 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
+          "spec": false,
+          "inlineStyle": true,
+          "inlineTemplate": true,
+          "prefix": "app",
           "style": "scss"
         }
       },
       "root": "",
-      "sourceRoot": "src",
-      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -21,13 +23,18 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "tsConfig": "src/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              "src/manifest.webmanifest",
-              "src/manifest.webmanifest"
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "/assets"
+              },
+              {
+                "glob": "favicon.ico",
+                "input": "src",
+                "output": "/"
+              }
             ],
             "styles": [
               "src/styles.scss"
@@ -36,12 +43,6 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -50,11 +51,18 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
             },
             "production-en": {
               "optimization": true,
               "outputHashing": "all",
+              "outputPath": "dist/browser/en/",
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
@@ -69,7 +77,6 @@
                 }
               ],
               "baseHref": "/en/",
-              "outputPath": "dist/browser/",
               "i18nFile": "src/locale/messages.en.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "en",
@@ -78,6 +85,7 @@
             "production-ua": {
               "optimization": true,
               "outputHashing": "all",
+              "outputPath": "dist/browser/ua/",
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
@@ -91,8 +99,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "baseHref": "ua",
-              "outputPath": "dist/browser/ua",
+              "baseHref": "/ua/",
               "i18nFile": "src/locale/messages.ua.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "ua",
@@ -159,38 +166,12 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/server/",
+            "outputPath": "dist/server",
             "main": "src/main.server.ts",
             "tsConfig": "src/tsconfig.server.json"
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
-            },
-            "production-en": {
-              "outputPath": "dist/server/en",
-              "i18nFile": "src/locale/messages.en.xlf",
-              "i18nFormat": "xlf",
-              "i18nLocale": "en",
-              "i18nMissingTranslation": "error",
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
-            },
-            "production-ua": {
-              "outputPath": "dist/server/ua",
-              "i18nFile": "src/locale/messages.ua.xlf",
-              "i18nFormat": "xlf",
-              "i18nLocale": "es",
-              "i18nMissingTranslation": "error",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
