@@ -10,7 +10,6 @@ import {MainLayoutComponent} from './static/main-layout/main-layout.component';
 import {HomePageComponent} from './modules/home/pages/home-page/home-page.component';
 import {PostPageComponent} from './modules/post-page/post-page.component';
 import {AlertComponent} from './static/alert/alert.component';
-import {AlertService} from './shared/dal/alert/alert.service';
 import {SearchPipe} from './shared/pipe/search.pipe';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
@@ -19,8 +18,6 @@ import {QuillModule} from 'ngx-quill';
 import { CommentsPageComponent } from './modals/comments-page/comments-page.component';
 import { AuthorPageComponent } from './modals/author-page/author-page.component';
 import { ModalPageComponent } from './static/modal-page/modal-page.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
 import { PaginationComponent } from './modules/home/modules/pagination/pagination.component';
 import { PaginatePipe } from './shared/pipe/paginate.pipe';
 import {RefDirective} from './shared/directives/ref.directive';
@@ -50,8 +47,7 @@ registerLocaleData(ukLocale, 'uk');
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    QuillModule.forRoot(),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    QuillModule.forRoot()
   ],
   exports: [RouterModule],
   entryComponents: [ModalPageComponent],
