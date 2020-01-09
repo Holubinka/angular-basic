@@ -2,7 +2,7 @@
   "name": "angular-blog",
   "version": "0.0.0",
   "scripts": {
-    "start": "node dist/server.js",
+    "start": "node dist/server",
     "heroku-prebuild": "npm install",
     "heroku-postbuild": "npm run build:i18n-ssr",
     "ng": "ng",
