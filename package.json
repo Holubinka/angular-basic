@@ -2,6 +2,9 @@
   "name": "angular-blog",
   "version": "0.0.0",
   "scripts": {
+    "start:heroku": "node dist/server",
+    "heroku-prebuild": "npm install",
+    "heroku-postbuild": "npm run build:ssr",
     "build:prod:en": "ng build --configuration=production-en",
     "build:prod:ua": "ng build --configuration=production-ua",
     "build:server:prod:en": "ng run angular-basics:server:production-en",
@@ -10,7 +13,7 @@
     "build:client-and-server-bundles": "npm run build:prod:en && npm run build:prod:ua && npm run build:server:prod:en && npm run build:server:prod:ua",
     "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
     "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
-    "start": "node dist/server"
+    "serve:sst": "node dist/server"
   },
   "private": true,
   "dependencies": {
