@@ -27,12 +27,12 @@ export class MainLayoutComponent implements OnInit {
   ngOnInit() {
     this.selectedValue = this.locales.filter((language) => {
       return language.code ===  location.pathname.split('/')[1];
-    }).pop().text;
+    }).pop();
 
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
-        this.currentUrl = event.url;
+        this.currentUrl = this.router.url;
       });
   }
 

@@ -208,7 +208,7 @@
       </trans-unit>
       <trans-unit id="f9a78773555c48756dfc7880238a7e0022e7244c" datatype="html">
         <source>Ім&apos;я: <x id="INTERPOLATION" equiv-text="{{author.name}}"/></source>
-        <target>Name: <x id="INTERPOLATION" equiv-text="{{author.name}}"/</target>
+        <target>Name: <x id="INTERPOLATION" equiv-text="{{author.name}}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
           <context context-type="linenumber">2</context>
@@ -240,7 +240,7 @@
       </trans-unit>
       <trans-unit id="9fc2ec3cd4240fb383efa05c5a20254d358ce502" datatype="html">
         <source>Місто: <x id="INTERPOLATION" equiv-text="{{author.address.city}}"/></source>
-        <target>City: <x id="INTERPOLATION" equiv-text="{{author.address.city}}"/</target>
+        <target>City: <x id="INTERPOLATION" equiv-text="{{author.address.city}}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
           <context context-type="linenumber">9</context>
