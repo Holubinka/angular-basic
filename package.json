@@ -6,7 +6,7 @@
     "heroku-prebuild": "npm install",
     "heroku-postbuild": "npm run build:i18n-ssr",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --configuration=en",
     "build": "ng build",
     "lint": "ng lint angular-basics",
     "build:client-and-server-bundles-i18n": "ng run angular-basics:build:production-ua && ng run angular-basics:build:production-en && ng run angular-basics:server:production",
