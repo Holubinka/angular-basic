@@ -41,7 +41,7 @@ app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
 // All regular routes use the Universal engine
 app.get('*', (req, res) => {
 //this is for i18n
-  const supportedLocales = ['en', 'гф'];
+  const supportedLocales = ['en', 'ua'];
   const defaultLocale = 'en';
   const matches = req.url.match(/^\/([a-z]{2}(?:-[A-Z]{2})?)\//);
 
