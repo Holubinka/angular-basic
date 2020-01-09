@@ -44,6 +44,7 @@ registerLocaleData(ukLocale, 'uk');
     RefDirective
   ],
   imports: [
+    BrowserModule.withServerTransition({appId: 'my-app'}),
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,

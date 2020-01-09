@@ -2,19 +2,19 @@
   "name": "angular-blog",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start:heroku": "node server.js",
+    "start:heroku": "node dist/server",
     "heroku-prebuild": "npm install",
-    "heroku-postbuild": "npm run build-i18n:en && npm run build-i18n:ua",
-    "build-i18n:ua": "ng build --aot --prod --configuration=production-ua",
-    "build-i18n:en": "ng build --aot --prod --configuration=production-en",
-    "start1": "ng serve",
-    "start:en": "ng serve --configuration=en",
-    "start:ua": "ng serve --configuration=ua",
+    "heroku-postbuild": "npm run build:i18n-ssr",
+    "ng": "ng",
+    "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "lint": "ng lint angular-basics",
+    "build:client-and-server-bundles-i18n": "ng run angular-basics:build:production-ua && ng run angular-basics:build:production-en && ng run angular-basics:server:production",
+    "build:client-and-server-bundles": "ng build --prod && ng run angular-basics:server:production",
+    "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
+    "build:i18n-ssr": "npm run build:client-and-server-bundles-i18n && npm run compile:server",
+    "compile:server": "tsc -p server.tsconfig.json",
+    "serve:ssr": "node dist/server"
   },
   "private": true,
   "dependencies": {
@@ -33,6 +33,8 @@
     "@angular/service-worker": "~8.1.0",
     "@nguniversal/express-engine": "latest",
     "@nguniversal/module-map-ngfactory-loader": "latest",
+    "compression": "latest",
+    "core-js": "^2.6.11",
     "express": "^4.17.1",
     "locale": "^0.1.0",
     "ngx-quill": "^7.3.2",
@@ -41,8 +43,7 @@
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "typescript": "~3.4.3",
-    "zone.js": "~0.9.1",
-    "compression": "latest"
+    "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.801.0",
