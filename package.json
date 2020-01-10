@@ -8,7 +8,7 @@
     "ng": "ng",
     "build": "ng build",
     "lint": "ng lint i18n-demo",
-    "build:client-and-server-bundles-i18n": "ng run angular-basics:build:production-ua && ng run angular-basics:build:production-en && ng run angular-basics:server:production",
+    "build:client-and-server-bundles-i18n": "ng run angular-basics:build:production-uk && ng run angular-basics:build:production-en && ng run angular-basics:server:production",
     "build:client-and-server-bundles": "ng build --prod && ng run angular-basics:server:production",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
     "build:i18n-ssr": "npm run build:client-and-server-bundles-i18n && npm run compile:server",
@@ -64,9 +64,5 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
-  },
-  "engines": {
-    "node": "10.15.3",
-    "npm": "6.9.0"
   }
 }

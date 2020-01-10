@@ -7,10 +7,6 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "spec": false,
-          "inlineStyle": true,
-          "inlineTemplate": true,
-          "prefix": "app",
           "style": "scss"
         }
       },
@@ -19,7 +15,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/browser/",
+            "outputPath": "dist/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -82,10 +78,10 @@
               "i18nLocale": "en",
               "i18nMissingTranslation": "error"
             },
-            "production-ua": {
+            "production-uk": {
               "optimization": true,
               "outputHashing": "all",
-              "outputPath": "dist/browser/ua/",
+              "outputPath": "dist/browser/uk/",
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
@@ -99,10 +95,10 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "baseHref": "/ua/",
-              "i18nFile": "src/locale/messages.ua.xlf",
+              "baseHref": "/uk/",
+              "i18nFile": "src/locale/messages.uk.xlf",
               "i18nFormat": "xlf",
-              "i18nLocale": "ua",
+              "i18nLocale": "uk",
               "i18nMissingTranslation": "error"
             }
           }
@@ -119,8 +115,8 @@
             "en": {
               "browserTarget": "angular-basics:build:production-en"
             },
-            "ua": {
-              "browserTarget": "angular-basics:build:production-ua"
+            "uk": {
+              "browserTarget": "angular-basics:build:production-uk"
             }
           }
         },

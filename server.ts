@@ -15,7 +15,7 @@ enableProdMode();
 // Express server
 const app = express();
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4001;
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
@@ -41,13 +41,12 @@ app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
 // All regular routes use the Universal engine
 app.get('*', (req, res) => {
 //this is for i18n
-  const supportedLocales = ['en', 'ua'];
-  const defaultLocale = 'en';
+  const supportedLocales = ['en', 'uk'];
+  const defaultLocale = 'uk';
   const matches = req.url.match(/^\/([a-z]{2}(?:-[A-Z]{2})?)\//);
 
   //check if the requested url has a correct format '/locale' and matches any of the supportedLocales
   const locale = (matches && supportedLocales.indexOf(matches[1]) !== -1) ? matches[1] : defaultLocale;
-
   res.render(`${locale}/index`, { req });
 });
 
