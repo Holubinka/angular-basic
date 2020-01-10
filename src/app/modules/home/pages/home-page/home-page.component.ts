@@ -36,7 +36,7 @@ export class HomePageComponent implements OnInit {
   remove(id: number) {
     this.postsService.remove(id).subscribe(() => {
       this.postsService.posts = this.postsService.posts.filter(post => post.id !== id);
-      this.alert.danger('Пост був видалений');
+      this.alert.danger('Danger');
     });
   }
 

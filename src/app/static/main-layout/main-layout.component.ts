@@ -1,7 +1,5 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
-import {NavigationEnd, Router} from '@angular/router';
-import {filter} from 'rxjs/operators';
-
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-main-layout',
@@ -19,15 +17,18 @@ export class MainLayoutComponent implements OnInit {
       text: 'Українська',
     }
   ];
-  currentUrl = '';
+  selectedValue: any;
+
   constructor(private router: Router,
               @Inject(LOCALE_ID) public locale: string) { }
 
   ngOnInit() {
-    this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe((event: NavigationEnd) => {
-        this.currentUrl = this.router.url;
-      });
+    this.selectedValue = this.locales.filter((language) => {
+      return language.code ===  location.pathname.split('/')[1];
+    }).pop();
+  }
+
+  onChange(event: string) {
+    location.href = '/' + `${event + this.router.url}`;
   }
 }

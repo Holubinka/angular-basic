@@ -58,7 +58,7 @@
             "production-en": {
               "optimization": true,
               "outputHashing": "all",
-              "outputPath": "dist/browser/en/",
+              "outputPath": "dist/en/",
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
@@ -81,7 +81,7 @@
             "production-uk": {
               "optimization": true,
               "outputHashing": "all",
-              "outputPath": "dist/browser/uk/",
+              "outputPath": "dist/uk/",
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,

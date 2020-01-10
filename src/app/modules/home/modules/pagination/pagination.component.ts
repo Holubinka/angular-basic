@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 import {PaginateService} from '../../../../shared/dal/pagination/paginate.service';
 
 @Component({
@@ -6,35 +6,30 @@ import {PaginateService} from '../../../../shared/dal/pagination/paginate.servic
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.scss']
 })
-export class PaginationComponent implements OnInit, OnChanges {
+export class PaginationComponent implements OnChanges {
   @Input() totalRecords = 0;
-  @Input() recordsPerPage = 0;
+  @Input() recordsPerPage = 10;
 
   @Output() onPageChange: EventEmitter<number> = new EventEmitter();
 
   public pages: any = {};
-  activePage: number;
+  activePage = 1;
 
   constructor(
     private pagerService: PaginateService
   ) { }
 
-  ngOnInit() {
-    this.setPage(1);
-  }
-
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.totalRecords.currentValue !== changes.totalRecords.previousValue) {
-      setTimeout(() => this.setPage(1));
-    }
+    setTimeout(() => this.setPage(1));
   }
 
   setPage(page: number) {
+    this.pages = this.pagerService.getPageCount(this.totalRecords, this.activePage, this.recordsPerPage);
+
     if (page < 1 || page > this.pages.totalPages) {
       return;
     }
     this.activePage = page;
     this.onPageChange.emit(this.activePage);
-    this.pages = this.pagerService.getPageCount(this.totalRecords, this.activePage, this.recordsPerPage);
   }
 }

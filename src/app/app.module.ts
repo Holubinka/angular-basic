@@ -1,8 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
-import {registerLocaleData} from '@angular/common';
-import ukLocale from '@angular/common/locales/uk';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -21,8 +19,6 @@ import { ModalPageComponent } from './static/modal-page/modal-page.component';
 import { PaginationComponent } from './modules/home/modules/pagination/pagination.component';
 import { PaginatePipe } from './shared/pipe/paginate.pipe';
 import {RefDirective} from './shared/directives/ref.directive';
-
-registerLocaleData(ukLocale, 'uk');
 
 @NgModule({
   declarations: [

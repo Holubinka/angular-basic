@@ -40,7 +40,7 @@ export class CreatePageComponent implements OnInit {
     this.postsService.create(post).subscribe( post1 => {
       this.postsService.posts.unshift(post1);
       this.form.reset();
-      this.alert.success('Пост був створений');
+      this.alert.success('Success');
       this.submitButton = false;
     });
   }

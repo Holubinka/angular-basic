@@ -10,8 +10,13 @@
     <li routerLinkActive="active">
       <a [routerLink]="['/', 'create']" i18n>Створити</a>
     </li>
-    <li *ngFor="let locale of locales">
-      <a class="lang-option" [href]="'/' + locale.code + currentUrl">{{ locale.text }}</a>
+    <li>
+      <select class="btn btn-link btn-dark" (change)="onChange($event.target.value)">
+        <option [value]="selectedValue.code" selected disabled hidden>
+          {{selectedValue.text}}
+        </option>
+        <option *ngFor="let l of locales" [value]="l.code">{{l.text}}</option>
+      </select>
     </li>
   </ul>
 </nav>

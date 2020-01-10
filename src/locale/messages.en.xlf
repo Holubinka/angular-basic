@@ -6,31 +6,31 @@
         <source>Головна</source>
         <target>Home</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/static/main-layout/main-layout.component.html</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="sourcefile">app/static/main-layout/main-layout.component.html</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d6c797f6e09648f916d769dc6230f6faec5304db" datatype="html">
         <source>Створити</source>
         <target>Create</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/static/main-layout/main-layout.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="sourcefile">app/static/main-layout/main-layout.component.html</context>
+          <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="045ed332fbb2645493d6955677247db0d1134c2d" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{title}}"/></source>
-        <target>Author</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/static/modal-page/modal-page.component.html</context>
-          <context context-type="linenumber">3</context>
-        </context-group>
+      <trans-unit id="bb0d04c37e406ee5a793caa482a3426de42b4c86" datatype="html">
+       <source>{VAR_SELECT, select, Author {Дані автора} Comment {Коментарі} }</source>
+       <target>{VAR_SELECT, select, Author {Author's data} Comment {Comments} }</target>
+       <context-group purpose="location">
+         <context context-type="sourcefile">app/static/modal-page/modal-page.component.html</context>
+         <context context-type="linenumber">3</context>
+       </context-group>
       </trans-unit>
       <trans-unit id="11eb5342d60d12e24ff7a2010d4a6916bf6d5b01" datatype="html">
         <source>Закрити</source>
         <target>Close</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/static/modal-page/modal-page.component.html</context>
+          <context context-type="sourcefile">app/static/modal-page/modal-page.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
@@ -38,51 +38,51 @@
         <source>Найти пост...</source>
         <target>Find a post ...</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/home/pages/home-page/home-page.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="sourcefile">app/modules/home/pages/home-page/home-page.component.html</context>
+          <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="36ebe04319bf0b7a4988cc335c7a7c91fa50074e" datatype="html">
         <source>Назва</source>
         <target>Name</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/home/pages/home-page/home-page.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="sourcefile">app/modules/home/pages/home-page/home-page.component.html</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d5588f2981de6949941394210a2bbafea1a5083f" datatype="html">
         <source>Коментарі</source>
         <target>Comments</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/home/pages/home-page/home-page.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="sourcefile">app/modules/home/pages/home-page/home-page.component.html</context>
+          <context context-type="linenumber">16</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/home/pages/home-page/home-page.component.html</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="sourcefile">app/modules/home/pages/home-page/home-page.component.html</context>
+          <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a17689a71ebf2e54ef10c04d06e46334d4efc65b" datatype="html">
         <source>Автор</source>
         <target>Author</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/home/pages/home-page/home-page.component.html</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="sourcefile">app/modules/home/pages/home-page/home-page.component.html</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8b95af8b646c8ab7a8daa7b95f166daf6acca30e" datatype="html">
         <source>Дії</source>
         <target>Actions</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/home/pages/home-page/home-page.component.html</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="sourcefile">app/modules/home/pages/home-page/home-page.component.html</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a0b4f7639081d7e5007e5c9d5772996df4fb65da" datatype="html">
         <source>Автор <x id="INTERPOLATION" equiv-text="{{post.userId}}"/></source>
         <target>Author <x id="INTERPOLATION" equiv-text="{{post.userId}}"/></target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/home/pages/home-page/home-page.component.html</context>
+          <context context-type="sourcefile">app/modules/home/pages/home-page/home-page.component.html</context>
           <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
@@ -90,23 +90,23 @@
         <source>Видалити</source>
         <target>Delete</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/home/pages/home-page/home-page.component.html</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="sourcefile">app/modules/home/pages/home-page/home-page.component.html</context>
+          <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6bf3440f7fb7099cfc2cbf4d6af877fb3fb63a95" datatype="html">
         <source>Загружаю пости....</source>
         <target>Loading posts ....</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/home/pages/home-page/home-page.component.html</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="sourcefile">app/modules/home/pages/home-page/home-page.component.html</context>
+          <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="51d7fd9a233759e3a68081d7b1e6ff7fd930fdd9" datatype="html">
         <source>На головну</source>
         <target>Home</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/post-page/post-page.component.html</context>
+          <context context-type="sourcefile">app/modules/post-page/post-page.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
@@ -114,7 +114,7 @@
         <source>Автор: <x id="INTERPOLATION" equiv-text="{{users.name}}"/></source>
         <target>Author: <x id="INTERPOLATION" equiv-text="{{users.name}}"/></target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/post-page/post-page.component.html</context>
+          <context context-type="sourcefile">app/modules/post-page/post-page.component.html</context>
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
@@ -122,15 +122,15 @@
         <source>Загружаю пост...</source>
         <target>Loading post...</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/post-page/post-page.component.html</context>
+          <context context-type="sourcefile">app/modules/post-page/post-page.component.html</context>
           <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="0e20288509b3fd2f83baf16882ec5cf9a3ede085" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{ text }}"/></source>
-        <target>Alert</target>
+      <trans-unit id="e3f7c5ebcbf538506863047eb2fbd9e08dd2b3de" datatype="html">
+        <source>{VAR_SELECT, select, Success {Пост був створений} Danger {Пост був видалений} }</source>
+        <target>{VAR_SELECT, select, Success {The post was created} Danger {The post was deleted} }</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/static/alert/alert.component.html</context>
+          <context context-type="sourcefile">app/static/alert/alert.component.html</context>
           <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
@@ -138,7 +138,7 @@
         <source>Створення нового поста</source>
         <target>Creating a new post</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/create-page/create-page.component.html</context>
+          <context context-type="sourcefile">app/modules/create-page/create-page.component.html</context>
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
@@ -146,15 +146,15 @@
         <source>Назва поста:</source>
         <target>Name of post:</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/create-page/create-page.component.html</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="sourcefile">app/modules/create-page/create-page.component.html</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3829f30c1ecd3cc537cc23804853f46194aeea39" datatype="html">
         <source>Введіть назву поста...</source>
         <target>Enter a post name ...</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/create-page/create-page.component.html</context>
+          <context context-type="sourcefile">app/modules/create-page/create-page.component.html</context>
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
@@ -162,31 +162,31 @@
         <source>Контент поста:</source>
         <target>Content of post:</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/create-page/create-page.component.html</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="sourcefile">app/modules/create-page/create-page.component.html</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="77acf34dcb25bcc102957a117ebaf96a0278477d" datatype="html">
         <source>Створити пост</source>
         <target>Create post</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/create-page/create-page.component.html</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="sourcefile">app/modules/create-page/create-page.component.html</context>
+          <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c866eeb36038a45e5072ae6864fa0693e3ca9937" datatype="html">
         <source>Відміна</source>
         <target>Cancel</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/create-page/create-page.component.html</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="sourcefile">app/modules/create-page/create-page.component.html</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="dcec61d75e6b5f6c84aa3b0a572ac078c42f60af" datatype="html">
         <source>Ім&apos;я: <x id="INTERPOLATION" equiv-text="{{comment.name | titlecase}}"/></source>
         <target>Name: <x id="INTERPOLATION" equiv-text="{{comment.name | titlecase}}"/></target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modals/comments-page/comments-page.component.html</context>
+          <context context-type="sourcefile">app/modals/comments-page/comments-page.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
@@ -194,7 +194,7 @@
         <source>Коментар: <x id="INTERPOLATION" equiv-text="{{comment.body | titlecase}}"/></source>
         <target>Comment: <x id="INTERPOLATION" equiv-text="{{comment.body | titlecase}}"/></target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modals/comments-page/comments-page.component.html</context>
+          <context context-type="sourcefile">app/modals/comments-page/comments-page.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
@@ -202,7 +202,7 @@
         <source>Загружаю коментарі...</source>
         <target>Loading comments ...</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modals/comments-page/comments-page.component.html</context>
+          <context context-type="sourcefile">app/modals/comments-page/comments-page.component.html</context>
           <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
@@ -210,7 +210,7 @@
         <source>Ім&apos;я: <x id="INTERPOLATION" equiv-text="{{author.name}}"/></source>
         <target>Name: <x id="INTERPOLATION" equiv-text="{{author.name}}"/></target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
+          <context context-type="sourcefile">app/modals/author-page/author-page.component.html</context>
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
@@ -218,7 +218,7 @@
         <source>Адреса:</source>
         <target>Address:</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
+          <context context-type="sourcefile">app/modals/author-page/author-page.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
@@ -226,7 +226,7 @@
         <source>Вулиця: <x id="INTERPOLATION" equiv-text="{{author.address.street}}"/></source>
         <target>Street: <x id="INTERPOLATION" equiv-text="{{author.address.street}}"/></target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
+          <context context-type="sourcefile">app/modals/author-page/author-page.component.html</context>
           <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
@@ -234,7 +234,7 @@
         <source>Будинок: <x id="INTERPOLATION" equiv-text="{{author.address.suite}}"/></source>
         <target>House: <x id="INTERPOLATION" equiv-text="{{author.address.suite}}"/></target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
+          <context context-type="sourcefile">app/modals/author-page/author-page.component.html</context>
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
@@ -242,7 +242,7 @@
         <source>Місто: <x id="INTERPOLATION" equiv-text="{{author.address.city}}"/></source>
         <target>City: <x id="INTERPOLATION" equiv-text="{{author.address.city}}"/></target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
+          <context context-type="sourcefile">app/modals/author-page/author-page.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
@@ -250,7 +250,7 @@
         <source>Індекс: <x id="INTERPOLATION" equiv-text="{{author.address.zipcode}}"/></source>
         <target>Zipcode: <x id="INTERPOLATION" equiv-text="{{author.address.zipcode}}"/></target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
+          <context context-type="sourcefile">app/modals/author-page/author-page.component.html</context>
           <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
@@ -258,7 +258,7 @@
         <source>Номер телефону: <x id="INTERPOLATION" equiv-text="{{author.phone}}"/></source>
         <target>Phone number: <x id="INTERPOLATION" equiv-text="{{author.phone}}"/></target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
+          <context context-type="sourcefile">app/modals/author-page/author-page.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
@@ -266,7 +266,7 @@
         <source>Вебсайт: <x id="INTERPOLATION" equiv-text="{{author.website}}"/></source>
         <target>Website: <x id="INTERPOLATION" equiv-text="{{author.website}}"/></target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
+          <context context-type="sourcefile">app/modals/author-page/author-page.component.html</context>
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
@@ -274,7 +274,7 @@
         <source>Загружаю дані....</source>
         <target>Loading data ....</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modals/author-page/author-page.component.html</context>
+          <context context-type="sourcefile">app/modals/author-page/author-page.component.html</context>
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
@@ -282,7 +282,7 @@
         <source>Перший</source>
         <target>First</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/home/modules/pagination/pagination.component.html</context>
+          <context context-type="sourcefile">modules/home/modules/pagination/pagination.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
@@ -290,7 +290,7 @@
         <source>Попередня</source>
         <target>Previous</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/home/modules/pagination/pagination.component.html</context>
+          <context context-type="sourcefile">app/modules/home/modules/pagination/pagination.component.html</context>
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
@@ -298,7 +298,7 @@
         <source>Наступна</source>
         <target>Next</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/home/modules/pagination/pagination.component.html</context>
+          <context context-type="sourcefile">app/modules/home/modules/pagination/pagination.component.html</context>
           <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
@@ -306,7 +306,7 @@
         <source>Остання</source>
         <target>Last</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/home/modules/pagination/pagination.component.html</context>
+          <context context-type="sourcefile">app/modules/home/modules/pagination/pagination.component.html</context>
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>

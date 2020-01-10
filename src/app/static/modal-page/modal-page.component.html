@@ -1,6 +1,6 @@
 <div class="backdrop" [routerLink]="['/home']" (click)="close.emit()"></div>
 <div *ngIf="visible" class="modal">
-  <h1 i18n>{{title}}</h1>
+  <h1 i18n>{title, select, Author {Дані автора} Comment {Коментарі}}</h1>
   <router-outlet></router-outlet>
  <button *ngIf="visible" [routerLink]="['/home']" class="btn" (click)="close.emit()" i18n>Закрити</button>
 </div>
