@@ -24,12 +24,13 @@ export class PaginationComponent implements OnChanges {
   }
 
   setPage(page: number) {
+    this.activePage = page;
     this.pages = this.pagerService.getPageCount(this.totalRecords, this.activePage, this.recordsPerPage);
 
     if (page < 1 || page > this.pages.totalPages) {
       return;
     }
-    this.activePage = page;
+
     this.onPageChange.emit(this.activePage);
   }
 }
