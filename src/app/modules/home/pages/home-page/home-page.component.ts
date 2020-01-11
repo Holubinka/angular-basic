@@ -40,7 +40,7 @@ export class HomePageComponent implements OnInit {
     });
   }
 
-  open(modalTitle, link) {
+  openModalPage(modalTitle, link) {
     const modalFactory = this.resolver.resolveComponentFactory(ModalPageComponent);
     this.modal.containerRef.clear();
     const component = this.modal.containerRef.createComponent(modalFactory);

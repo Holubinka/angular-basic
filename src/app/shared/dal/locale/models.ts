@@ -1,11 +1,14 @@
 export interface ILocale {
   code: string;
+  text: string;
 }
 export const locales: ILocale[] = [
   {
-    code: 'ua'
+    code: 'en',
+    text: 'English',
   },
   {
-    code: 'en'
+    code: 'uk',
+    text: 'Українська',
   }
 ];

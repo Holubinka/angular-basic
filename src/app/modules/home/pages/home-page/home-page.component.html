@@ -30,10 +30,10 @@
           </button>
           </td>
           <td>
-            <button class="btn btn-outline-primary mb-2 mr-2"  (click)="this.open('Comment', ['comments', post.id])" i18n>Коментарі</button>
+            <button class="btn btn-outline-primary mb-2 mr-2"  (click)="this.openModalPage('Comment', ['comments', post.id])" i18n>Коментарі</button>
           </td>
           <td>
-            <button class="btn btn-outline-primary mb-2 mr-2"  (click)="this.open('Author', ['user', post.userId])" i18n>Автор {{post.userId}}</button>
+            <button class="btn btn-outline-primary mb-2 mr-2"  (click)="this.openModalPage('Author', ['user', post.userId])" i18n>Автор {{post.userId}}</button>
           </td>
           <td> <a (click)="remove(post.id)" i18n>Видалити</a></td>
         </tr>

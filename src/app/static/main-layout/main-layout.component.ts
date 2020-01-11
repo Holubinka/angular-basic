@@ -1,5 +1,6 @@
-import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
+import {Component,  OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {locales} from '../../shared/dal/locale/models';
 
 @Component({
   selector: 'app-main-layout',
@@ -7,22 +8,13 @@ import {Router} from '@angular/router';
   styleUrls: ['./main-layout.component.scss']
 })
 export class MainLayoutComponent implements OnInit {
-  locales = [
-    {
-      code: 'en',
-      text: 'English',
-    },
-    {
-      code: 'uk',
-      text: 'Українська',
-    }
-  ];
+  locales = [];
   selectedValue: any;
 
-  constructor(private router: Router,
-              @Inject(LOCALE_ID) public locale: string) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    this.locales = locales;
     this.selectedValue = this.locales.filter((language) => {
       return language.code ===  location.pathname.split('/')[1];
     }).pop();
