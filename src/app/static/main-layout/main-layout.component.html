@@ -12,9 +12,6 @@
     </li>
     <li>
       <select class="btn btn-link btn-dark" (change)="onChange($event.target.value)">
-        <option [defaultSelected]="selectedValue.code" selected disabled hidden>
-          {{selectedValue.text}}
-        </option>
         <option *ngFor="let l of locales" [value]="l.code" [selected]="l.code == selectedValue.code">{{l.text}}</option>
       </select>
     </li>
