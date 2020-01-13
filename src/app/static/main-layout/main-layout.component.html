@@ -12,10 +12,12 @@
     </li>
     <li>
       <select class="btn btn-link btn-dark" (change)="onChange($event.target.value)">
-        <option [value]="selectedValue.code" selected disabled hidden>
+        <option [defaultSelected]="selectedValue.code" selected disabled hidden>
           {{selectedValue.text}}
         </option>
-        <option *ngFor="let l of locales" [value]="l.code">{{l.text}}</option>
+        <ng-container *ngFor="let l of locales">
+          <option *ngIf="selectedValue.code != l.code" [value]="l.code" >{{l.text}}</option>
+        </ng-container>
       </select>
     </li>
   </ul>
