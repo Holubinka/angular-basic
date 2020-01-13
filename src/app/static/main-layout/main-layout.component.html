@@ -15,9 +15,7 @@
         <option [defaultSelected]="selectedValue.code" selected disabled hidden>
           {{selectedValue.text}}
         </option>
-        <ng-container *ngFor="let l of locales">
-          <option *ngIf="selectedValue.code != l.code" [value]="l.code" >{{l.text}}</option>
-        </ng-container>
+        <option *ngFor="let l of locales" [value]="l.code" [selected]="l.code == selectedValue.code">{{l.text}}</option>
       </select>
     </li>
   </ul>
